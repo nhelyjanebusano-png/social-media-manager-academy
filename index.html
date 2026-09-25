@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Social Media Manager Mastery Academy</title>
+<style>
+:root{
+  --bg:#f7f3ff;
+  --paper:rgba(255,255,255,.92);
+  --ink:#25222d;
+  --muted:#746f80;
+  --dark:#2e2344;
+  --accent:#7c5cff;
+  --accent2:#ff6b9d;
+  --accent3:#ffb45c;
+  --mint:#67d8bb;
+  --soft:#f0eaff;
+  --line:#e6ddf3;
+  --good:#55a982;
+  --shadow:0 18px 50px rgba(70,45,110,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 10% 0%,rgba(255,107,157,.16),transparent 25%),
+    radial-gradient(circle at 90% 8%,rgba(124,92,255,.16),transparent 25%),
+    linear-gradient(180deg,#fbf9ff 0%,#f6f2ff 55%,#fff8f5 100%);
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.68;
+}
+button,input,select{font:inherit}
+a{color:var(--accent);font-weight:650}
+.header{
+  background:linear-gradient(135deg,#2e2344 0%,#4c2d68 48%,#6f4fbe 100%);
+  color:#fff;
+  padding:28px 18px 24px;
+  position:sticky;
+  top:0;
+  z-index:30;
+  box-shadow:0 8px 30px rgba(45,30,65,.18);
+}
+.wrap{max-width:1240px;margin:auto}
+.header h1{margin:0;font-size:32px;letter-spacing:-.7px}
+.subtitle{margin:5px 0 0;color:#efe9fa}
+.toolbar{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.toolbar input,.toolbar select{
+  padding:12px 14px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  backdrop-filter:blur(12px);
+  outline:none;
+}
+.toolbar input{min-width:300px;flex:1}
+.toolbar input::placeholder{color:#ddd4ee}
+.nav{
+  position:sticky;
+  top:126px;
+  z-index:25;
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--line);
+}
+.nav .wrap{display:flex;overflow:auto;gap:7px;padding:10px}
+.nav button{
+  border:0;
+  background:transparent;
+  padding:10px 14px;
+  border-radius:999px;
+  cursor:pointer;
+  white-space:nowrap;
+  color:var(--ink);
+  transition:.18s ease;
+}
+.nav button:hover{transform:translateY(-1px);background:#eee7fb}
+.nav button.active{
+  background:linear-gradient(135deg,var(--accent),#a36bff);
+  color:#fff;
+  box-shadow:0 7px 18px rgba(124,92,255,.22);
+}
+main{padding:28px 18px 90px}
+.hero,.card{
+  background:var(--paper);
+  border:1px solid rgba(230,221,243,.95);
+  border-radius:26px;
+  padding:25px;
+  margin-bottom:18px;
+  box-shadow:var(--shadow);
+}
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 92% 14%,rgba(255,180,92,.24),transparent 23%),
+    radial-gradient(circle at 9% 14%,rgba(255,107,157,.18),transparent 24%),
+    linear-gradient(135deg,#fff,#f5efff 55%,#fff7fb);
+}
+.hero:after{
+  content:"✦";
+  position:absolute;
+  right:28px;
+  bottom:16px;
+  font-size:52px;
+  opacity:.11;
+}
+.hero h2{margin:0 0 10px;font-size:42px;line-height:1.05;letter-spacing:-1px}
+.hero p{max-width:900px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:12px;margin-top:20px}
+.stat{
+  background:rgba(255,255,255,.78);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.stat:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(72,52,115,.10)}
+.stat b{display:block;font-size:25px;margin-bottom:2px}
+.callout{
+  background:linear-gradient(135deg,#fff6f8,#f2edff);
+  border:1px solid #ecdff4;
+  padding:14px 16px;
+  border-radius:16px;
+}
+.module{border-top:1px solid var(--line);margin-top:34px;padding-top:34px}
+.module-head{display:flex;gap:16px;align-items:flex-start;margin-bottom:19px}
+.module-head h2{margin:0;font-size:30px;line-height:1.22;letter-spacing:-.5px}
+.module-head p{margin:5px 0 0;color:var(--muted)}
+.week{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:white;
+  padding:8px 11px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:850;
+  white-space:nowrap;
+  letter-spacing:.7px;
+  box-shadow:0 7px 18px rgba(124,92,255,.18);
+}
+.lesson-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:16px}
+.lesson{
+  background:linear-gradient(180deg,#fff,#fffaff);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:19px;
+  box-shadow:0 10px 25px rgba(78,50,115,.06);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.lesson:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(78,50,115,.10);border-color:#d6c6ef}
+.lesson-num{font-size:11px;color:var(--accent);font-weight:850;letter-spacing:.9px}
+.lesson h3{font-size:21px;line-height:1.28;margin:5px 0 11px}
+.lesson h4{font-size:13px;margin:15px 0 4px}
+.lesson p{margin:0;color:#443e4e}
+.mastery{
+  background:linear-gradient(135deg,#eefaf6,#f4fff9);
+  border:1px solid #ccebdd;
+  border-radius:13px;
+  padding:11px 13px;
+  margin-top:15px;
+}
+.mastery h4{color:#2f7357;margin-top:0}
+.deliverable{
+  background:
+    radial-gradient(circle at 90% 10%,rgba(255,180,92,.2),transparent 20%),
+    linear-gradient(135deg,#2e2344,#4c3568);
+  color:#fff;
+  border-radius:20px;
+  padding:20px;
+  margin-top:17px;
+  box-shadow:0 16px 35px rgba(46,35,68,.16);
+}
+.deliverable p{color:#e8e0f3}
+.deliverable label{display:flex;gap:9px;align-items:center;font-weight:700}
+.progress-wrap{height:12px;background:#e8e1f1;border-radius:999px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));transition:width .25s ease}
+.search{
+  width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:14px;font-size:16px;margin:10px 0 14px;
+  background:#fff;
+  outline:none;
+}
+.search:focus{border-color:#c7b6eb;box-shadow:0 0 0 4px rgba(124,92,255,.08)}
+.table-wrap{max-height:70vh;overflow:auto;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 25px rgba(78,50,115,.04)}
+table{width:100%;border-collapse:collapse;background:#fff}
+th,td{padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{background:#f2ecfb;position:sticky;top:0;z-index:2}
+.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;border:0;border-radius:13px;padding:11px 16px;cursor:pointer;
+  box-shadow:0 8px 18px rgba(124,92,255,.20);
+}
+.portfolio-item{display:block;padding:9px 0}
+.hidden{display:none}
+.small{color:var(--muted);font-size:13px}
+.q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+.q label{display:block;padding:6px 0}
+.badge-row{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}
+.pill{
+  display:inline-flex;align-items:center;gap:6px;
+  background:#f1ebfb;border:1px solid #e4d9f4;border-radius:999px;padding:7px 10px;font-size:12px;font-weight:750
+}
+.quest{
+  display:grid;grid-template-columns:1.4fr .8fr;gap:15px;margin-top:18px
+}
+.quest-card{
+  border:1px solid var(--line);border-radius:20px;padding:18px;
+  background:linear-gradient(135deg,#fff,#fff6fb);
+}
+.xp{
+  font-size:35px;font-weight:900;letter-spacing:-1px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.level{
+  display:inline-block;background:#2e2344;color:#fff;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:850;letter-spacing:.5px
+}
+.tip{
+  border-radius:16px;padding:14px 15px;background:linear-gradient(135deg,#fff3df,#fff8ef);border:1px solid #f3dfbf
+}
+footer{color:var(--muted);text-align:center;padding:32px 18px}
+@media(max-width:800px){
+  .header,.nav{position:static}
+  .lesson-grid{grid-template-columns:1fr}
+  .hero h2{font-size:31px}
+  .quest{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="header"><div class="wrap">
+<h1>Social Media Manager Mastery Academy</h1>
+<p class="subtitle">Zero-knowledge → professional Social Media Manager • Meta • Facebook • Instagram • TikTok • YouTube • LinkedIn • X • Pinterest • Snapchat • Reddit • Twitch</p>
+<div class="toolbar"><input id="globalSearch" placeholder="Search lessons, jargon, metrics, platforms..."><select id="weekJump"><option value="">Jump to week</option><option value="week-1">Week 1: Social Media Manager Foundations</option><option value="week-2">Week 2: Audience, Research, and Strategy</option><option value="week-3">Week 3: Meta Business Suite + Facebook</option><option value="week-4">Week 4: Instagram Professional Mastery</option><option value="week-5">Week 5: TikTok Mastery</option><option value="week-6">Week 6: YouTube Mastery</option><option value="week-7">Week 7: LinkedIn, X, Pinterest, Snapchat, Reddit, and Twitch</option><option value="week-8">Week 8: Content Production and Creative Direction</option><option value="week-9">Week 9: Community Management and Social Customer Care</option><option value="week-10">Week 10: Analytics and Reporting Mastery</option><option value="week-11">Week 11: Monetization: Build a Social Media Business</option><option value="week-12">Week 12: Platform Policies, Copyright, and Legal Safety</option><option value="week-13">Week 13: Paid Social and Advertising Foundations</option><option value="week-14">Week 14: Social Operations, Automation, and AI</option><option value="week-15">Week 15: Social Growth, Monetization, and Creator Management</option><option value="week-16">Week 16: Capstone: Run a Complete Social Media Department</option></select></div>
+</div></header>
+<nav class="nav"><div class="wrap">
+<button class="active" data-tab="dashboard">Dashboard</button><button data-tab="roadmap">16-Week Roadmap</button><button data-tab="course">Full Course</button><button data-tab="platforms">Platform Lab</button><button data-tab="globalcal">Global Content Calendar</button><button data-tab="algorithms">Algorithm Lab</button><button data-tab="suites">Platform Suites</button><button data-tab="money">Monetization Lab</button><button data-tab="policies">Policy Center</button><button data-tab="glossary">Glossary</button><button data-tab="systems">Systems + Automation</button><button data-tab="seoauto">SEO + Automation Mastery</button><button data-tab="quiz">Knowledge Checks</button><button data-tab="portfolio">Portfolio</button>
+</div></nav>
+<main class="wrap">
+<section id="dashboard" class="tab"><div class="hero"><h2>Become the person who can run a real social media operation.</h2><p>This academy assumes you know nothing about social media management. It teaches fundamentals first, then builds platform-specific execution, content production, community management, analytics, monetization, policy compliance, paid social, automation, AI, and leadership.</p><div class="callout"><strong>Study method:</strong> Read the teaching → analyze the manager scenario → complete the practice → save your work → check the mastery standard → revisit weak areas.</div><div class="stats"><div class="stat"><b>16</b>Weeks</div><div class="stat"><b>80</b>Lessons</div><div class="stat"><b>112</b>Glossary terms</div><div class="stat"><b id="doneCount">0%</b>Progress</div></div></div>
+
+<div class="quest">
+  <div class="quest-card">
+    <span class="level">YOUR NEXT QUEST</span>
+    <h3 style="margin:8px 0 6px">Build one thing today.</h3>
+    <p class="small" style="margin:0 0 10px">Pick one practice, finish it, and save it. Your goal is momentum—not marathon studying.</p>
+    <div class="badge-row">
+      <span class="pill">⚡ 25–45 min</span>
+      <span class="pill">🧠 Learn + do</span>
+      <span class="pill">🎯 Portfolio-worthy</span>
+    </div>
+  </div>
+  <div class="quest-card">
+    <div class="small">ACADEMY XP</div>
+    <div class="xp" id="xpValue">0 XP</div>
+    <div class="small">Every completed checkpoint earns XP.</div>
+  </div>
+</div>
+<div class="tip" style="margin-top:15px">
+  <strong>✨ Make it feel like work, not school:</strong> study one concept, immediately build something with it, then use the result as portfolio evidence. You are training a skill, not collecting notes.
+</div>
+
+<div class="card"><h3>Your Social Media Learning Loop</h3><p><strong>Research → Plan → Produce → QA → Publish → Listen → Measure → Learn → Repurpose → Improve.</strong> A professional manager owns the loop, not just the publish button.</p></div>
+<div class="card"><h3>Core Skill Stack</h3><div class="stats"><div class="stat"><b>Strategy</b>Audience, objectives, pillars, positioning</div><div class="stat"><b>Creative</b>Hooks, scripts, design, video, captions</div><div class="stat"><b>Operations</b>Calendar, approvals, QA, rights</div><div class="stat"><b>Community</b>Comments, DMs, moderation, crisis</div><div class="stat"><b>Analytics</b>Reach, retention, CTR, conversion, ROI</div><div class="stat"><b>Monetization</b>Platform, sponsors, affiliates, products</div><div class="stat"><b>Systems</b>Notion, automation, AI, dashboards</div><div class="stat"><b>Policy</b>Guidelines, copyright, disclosure, safety</div></div></div></section>
+<section id="roadmap" class="tab hidden"><div class="card"><h2>16-Week Roadmap</h2><p class="small">Use Full Course for the actual lessons and teaching.</p><div class="table-wrap"><table><thead><tr><th>Week</th><th>Module</th><th>Outcome</th></tr></thead><tbody><tr><td><strong>Week 1</strong></td><td>Social Media Manager Foundations</td><td>Start from zero: understand what a Social Media Manager actually owns, how platforms differ, and how to build a professional operating system.</td></tr><tr><td><strong>Week 2</strong></td><td>Audience, Research, and Strategy</td><td>Learn how to understand audiences, competitors, platform behavior, and trends before building content.</td></tr><tr><td><strong>Week 3</strong></td><td>Meta Business Suite + Facebook</td><td>Master the Meta ecosystem at an operational level: business assets, Facebook Pages, scheduling, insights, community, and content workflows.</td></tr><tr><td><strong>Week 4</strong></td><td>Instagram Professional Mastery</td><td>Learn Instagram content systems, Reels, Stories, carousels, profile optimization, community management, discovery, and analytics.</td></tr><tr><td><strong>Week 5</strong></td><td>TikTok Mastery</td><td>Learn TikTok-native storytelling, discovery, search behavior, engagement, commercial content, account health, and safety.</td></tr><tr><td><strong>Week 6</strong></td><td>YouTube Mastery</td><td>Learn YouTube from channel architecture through Shorts, long-form video, thumbnails, titles, analytics, copyright, and monetization.</td></tr><tr><td><strong>Week 7</strong></td><td>LinkedIn, X, Pinterest, Snapchat, Reddit, and Twitch</td><td>Learn how to manage additional platforms and understand their very different cultures, discovery systems, community rules, and monetization models.</td></tr><tr><td><strong>Week 8</strong></td><td>Content Production and Creative Direction</td><td>Learn the production workflow: ideation, briefs, scripts, filming, editing, design, captions, assets, accessibility, and approval.</td></tr><tr><td><strong>Week 9</strong></td><td>Community Management and Social Customer Care</td><td>Learn comment moderation, DMs, escalation, crisis handling, community building, and response systems.</td></tr><tr><td><strong>Week 10</strong></td><td>Analytics and Reporting Mastery</td><td>Learn the numbers that matter: reach, impressions, engagement, watch time, retention, clicks, conversion, audience growth, and ROI.</td></tr><tr><td><strong>Week 11</strong></td><td>Monetization: Build a Social Media Business</td><td>Learn the major ways creators and brands monetize: platform programs, ads, memberships, subscriptions, gifts, affiliates, sponsorships, products, services, and lead generation.</td></tr><tr><td><strong>Week 12</strong></td><td>Platform Policies, Copyright, and Legal Safety</td><td>Learn the policy architecture common across platforms and how to perform pre-publication compliance checks.</td></tr><tr><td><strong>Week 13</strong></td><td>Paid Social and Advertising Foundations</td><td>Understand Meta Ads and the general logic of paid social without confusing organic social management with media buying.</td></tr><tr><td><strong>Week 14</strong></td><td>Social Operations, Automation, and AI</td><td>Build a scalable content machine using Notion or similar systems, automation tools, and supervised AI.</td></tr><tr><td><strong>Week 15</strong></td><td>Social Growth, Monetization, and Creator Management</td><td>Learn to build sustainable growth systems, creator partnerships, sponsorship operations, and monetization plans.</td></tr><tr><td><strong>Week 16</strong></td><td>Capstone: Run a Complete Social Media Department</td><td>Integrate strategy, content, community, analytics, monetization, policy, automation, and reporting into a professional operating system.</td></tr></tbody></table></div></div></section>
+<section id="course" class="tab hidden"><div class="card"><h2>Full Course</h2><p>Every lesson contains teaching, a manager scenario, practice, and a mastery standard.</p><div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div></div><section class="module" id="week-1"><div class="module-head"><span class="week">WEEK 1</span><div><h2>Social Media Manager Foundations</h2><p>Start from zero: understand what a Social Media Manager actually owns, how platforms differ, and how to build a professional operating system.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>What a Social Media Manager Actually Does</h3><h4>📘 Teaching</h4><p>A Social Media Manager plans, produces, publishes, monitors, analyzes, and improves social communication. The job is not simply posting every day. You manage attention, community, brand voice, content operations, platform-native execution, reporting, and risk. In some companies you also coordinate creators, paid media, customer care, and launches.</p><h4>💼 Real Manager Scenario</h4><p>A founder says, &#x27;Our engagement is down.&#x27; You do not immediately post more. You inspect audience, content themes, reach, watch time, saves, comments, traffic, recent changes, and business goals. Then you form a hypothesis and test it.</p><h4>✍️ Practice</h4><p>Write the job description you think a professional Social Media Manager should own. Divide it into strategy, production, publishing, community, analytics, monetization, and risk.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can explain the difference between activity and effective social management.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>The Social Media Funnel</h3><h4>📘 Teaching</h4><p>A social funnel describes how people move from discovering a brand to engaging, visiting, converting, and potentially becoming repeat customers or advocates. Awareness is not the same as conversion, and a viral view does not automatically equal revenue.</p><h4>💼 Real Manager Scenario</h4><p>A recipe Reel may attract 500,000 views but produce few customers. A smaller tutorial may generate 50,000 views and many qualified clicks. The manager needs to understand the business outcome behind the attention.</p><h4>✍️ Practice</h4><p>Draw a funnel for a fictional business and assign platform metrics to each stage.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can connect social metrics to business outcomes rather than chasing vanity numbers.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Organic vs Paid Social</h3><h4>📘 Teaching</h4><p>Organic content is distributed without paying for each impression; paid social uses advertising budget to reach selected audiences. They can support each other, but the strategy and measurement are different.</p><h4>💼 Real Manager Scenario</h4><p>A strong organic video can become an ad asset, while a paid campaign can reveal audience questions that inspire future organic content.</p><h4>✍️ Practice</h4><p>Create an organic-versus-paid decision table for five campaign goals.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can explain when a problem needs better content, targeting, budget, offer, or some combination.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Content Pillars and Brand Voice</h3><h4>📘 Teaching</h4><p>Content pillars are repeatable subject areas that organize what a brand talks about. Brand voice is the personality and communication style expressed consistently across content. Together they create recognizable, repeatable publishing.</p><h4>💼 Real Manager Scenario</h4><p>A café might use pillars such as product education, behind the scenes, customer stories, local culture, and offers. The same brand voice should remain recognizable even when formats change.</p><h4>✍️ Practice</h4><p>Create five content pillars and a voice guide for a fictional brand.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can build a content system instead of inventing random posts every day.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>The Social Media Operating System</h3><h4>📘 Teaching</h4><p>A reliable social team uses an operating system: strategy, content calendar, production workflow, approvals, publishing checklist, community queue, analytics dashboard, and review cadence.</p><h4>💼 Real Manager Scenario</h4><p>Without a system, missed approvals, wrong links, duplicate posts, outdated offers, and late campaigns become normal.</p><h4>✍️ Practice</h4><p>Draw the end-to-end workflow from idea → brief → production → QA → approval → publish → monitor → report → improve.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can describe the complete life cycle of a social post.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w1"> Mark Week 1 deliverable complete</label></div></section><section class="module" id="week-2"><div class="module-head"><span class="week">WEEK 2</span><div><h2>Audience, Research, and Strategy</h2><p>Learn how to understand audiences, competitors, platform behavior, and trends before building content.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Audience Research</h3><h4>📘 Teaching</h4><p>Audience research identifies who you are trying to reach, what they care about, what problems they have, what language they use, and where they spend attention. It prevents strategy from becoming guesswork.</p><h4>💼 Real Manager Scenario</h4><p>A skincare brand should not treat all followers as the same. A beginner audience may need basic education, while advanced users may want ingredient comparisons.</p><h4>✍️ Practice</h4><p>Build three audience personas based on a fictional product, including goals, pain points, objections, content preferences, and buying triggers.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can turn audience observations into content opportunities.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Social Listening</h3><h4>📘 Teaching</h4><p>Social listening means systematically monitoring conversations, comments, mentions, keywords, competitors, customer complaints, and emerging questions. Listening can reveal demand and reputation risks.</p><h4>💼 Real Manager Scenario</h4><p>If people repeatedly ask the same question in comments, that question can become a content series or FAQ.</p><h4>✍️ Practice</h4><p>Create a listening board with brand mentions, product questions, competitor topics, trends, and risk signals.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can distinguish useful signals from random noise.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Competitor Analysis</h3><h4>📘 Teaching</h4><p>Competitor analysis is not copying. It means studying positioning, formats, posting patterns, offers, engagement patterns, audience comments, strengths, gaps, and opportunities.</p><h4>💼 Real Manager Scenario</h4><p>If competitors all publish polished product shots, a brand may find an opportunity in demonstrations, education, founder storytelling, or customer proof.</p><h4>✍️ Practice</h4><p>Analyze three fictional competitors and identify five gaps a new brand could own.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can create strategic opportunities rather than duplicate competitors.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Trend Research</h3><h4>📘 Teaching</h4><p>A trend is useful only when it is relevant to the audience and brand. Study search trends, platform discovery surfaces, recurring formats, cultural moments, sounds, topics, and conversation patterns. Avoid using a trend just because it is popular.</p><h4>💼 Real Manager Scenario</h4><p>A trending audio can be irrelevant to a B2B company. A trending business question may be a stronger content opportunity even if it has less obvious entertainment value.</p><h4>✍️ Practice</h4><p>Create a trend-scoring model using relevance, audience fit, timing, brand fit, effort, risk, and expected value.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can decide whether a trend deserves action.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Content Strategy and Objectives</h3><h4>📘 Teaching</h4><p>A strategy states who you serve, what you want to achieve, what you will publish, where, how often, and how success will be measured. Objectives should connect to business goals.</p><h4>💼 Real Manager Scenario</h4><p>If the goal is lead generation, &#x27;get more followers&#x27; may be a weak primary objective. You may instead track qualified clicks, leads, conversion rate, and cost per qualified lead.</p><h4>✍️ Practice</h4><p>Write a 30-day social strategy for a fictional business with three objectives and five content pillars.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can explain why every content activity exists.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w2"> Mark Week 2 deliverable complete</label></div></section><section class="module" id="week-3"><div class="module-head"><span class="week">WEEK 3</span><div><h2>Meta Business Suite + Facebook</h2><p>Master the Meta ecosystem at an operational level: business assets, Facebook Pages, scheduling, insights, community, and content workflows.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Meta Business Ecosystem</h3><h4>📘 Teaching</h4><p>Meta includes products such as Facebook and Instagram that can be managed through Meta business tools. Learn the difference between a profile, Page, business portfolio, ad account, dataset/pixel concepts, roles, permissions, and publishing tools.</p><h4>💼 Real Manager Scenario</h4><p>An employee may need permission to publish but not payment access. Good asset architecture reduces security and operational mistakes.</p><h4>✍️ Practice</h4><p>Create a fictional Meta business-asset map showing Page, Instagram account, ad account, people, roles, and content responsibilities.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can explain what each business asset does and why permissions matter.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Facebook Page Management</h3><h4>📘 Teaching</h4><p>Facebook Pages are business/public presences. A manager needs to handle identity, profile information, content, comments, messages, notifications, publishing, and performance review.</p><h4>💼 Real Manager Scenario</h4><p>A Page may receive customer complaints in comments and private messages. Social management includes response workflows, escalation, and reputation protection.</p><h4>✍️ Practice</h4><p>Build a Facebook Page checklist covering profile setup, content, comments, messages, moderation, and reporting.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can operate a Page without treating it as a personal profile.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Meta Business Suite Publishing</h3><h4>📘 Teaching</h4><p>Use the central publishing workflow to organize content, drafts, scheduled posts, Reels, Stories where supported, and performance reviews. Always confirm the selected account and format before publishing.</p><h4>💼 Real Manager Scenario</h4><p>A single publishing screen may manage multiple brand destinations, so account selection and preview are important QA steps.</p><h4>✍️ Practice</h4><p>Create a weekly publishing workflow with a pre-publish checklist and approval gate.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can schedule confidently without publishing on the wrong account.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Facebook Content Strategy</h3><h4>📘 Teaching</h4><p>Facebook can support community discussion, video, Reels, groups, local discovery, customer communication, and longer-form context depending on the brand. Strategy should follow audience behavior rather than assumptions about a platform.</p><h4>💼 Real Manager Scenario</h4><p>A local business might prioritize community posts and customer stories while a creator brand may emphasize video and live interaction.</p><h4>✍️ Practice</h4><p>Create a seven-day Facebook content plan with mixed formats and a clear purpose for every post.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can adapt content to Facebook&#x27;s strengths.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Facebook Insights and Community Operations</h3><h4>📘 Teaching</h4><p>Learn to review reach, engagement, video performance, audience signals, comments, messages, and business outcomes. Community management includes response time, tone, moderation, escalation, and feedback capture.</p><h4>💼 Real Manager Scenario</h4><p>A high-performing post with a large number of negative comments should not be called an unqualified success.</p><h4>✍️ Practice</h4><p>Create a daily community queue and a weekly Facebook performance report.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can manage both numbers and human interaction.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w3"> Mark Week 3 deliverable complete</label></div></section><section class="module" id="week-4"><div class="module-head"><span class="week">WEEK 4</span><div><h2>Instagram Professional Mastery</h2><p>Learn Instagram content systems, Reels, Stories, carousels, profile optimization, community management, discovery, and analytics.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Instagram Account Architecture</h3><h4>📘 Teaching</h4><p>Understand personal, professional, creator, and business account concepts as they apply to your workflow. Keep profile identity, bio, links, contact options, highlights, and branding aligned with the goal.</p><h4>💼 Real Manager Scenario</h4><p>A creator trying to build partnerships needs a different profile structure from a local service business trying to generate appointments.</p><h4>✍️ Practice</h4><p>Audit a fictional Instagram profile and produce an improvement checklist.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can optimize a profile for a defined business objective.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Reels and Short-Form Video</h3><h4>📘 Teaching</h4><p>Short-form video is built around the first moments of attention, clear value, pacing, visual clarity, captions, sound, and a satisfying payoff. Do not reduce success to a single hook formula.</p><h4>💼 Real Manager Scenario</h4><p>A tutorial can open with the problem, show the result, then explain the steps. The structure should serve the viewer rather than manipulate them.</p><h4>✍️ Practice</h4><p>Create five Reel concepts with hook, problem, value, proof, CTA, shot list, and caption.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can create repeatable short-form formats.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Stories and Community</h3><h4>📘 Teaching</h4><p>Stories can support daily relationship-building through updates, Q&amp;A, polls, behind-the-scenes content, replies, and reminders. They are useful for maintaining a conversation rather than only broadcasting.</p><h4>💼 Real Manager Scenario</h4><p>A brand can use Stories to collect questions that become future feed content.</p><h4>✍️ Practice</h4><p>Design a seven-day Story sequence with interaction points and a measurement plan.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can turn Stories into a relationship and feedback channel.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Carousels, Captions, and Saves</h3><h4>📘 Teaching</h4><p>Carousels can organize educational or sequential information. Captions should provide context, clarity, and an appropriate CTA. Saves and shares may be meaningful signals for educational content.</p><h4>💼 Real Manager Scenario</h4><p>A ten-slide carousel explaining a complex topic can be more useful than squeezing everything into a single graphic.</p><h4>✍️ Practice</h4><p>Create three carousel outlines and write captions for them.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can match format to the learning job the audience needs.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Instagram Analytics and Optimization</h3><h4>📘 Teaching</h4><p>Review reach, accounts engaged, views, watch time where available, shares, saves, profile activity, link activity, follower changes, and business conversions. Compare against your objective.</p><h4>💼 Real Manager Scenario</h4><p>A post with fewer likes can still be strong if it generates many saves and qualified profile visits.</p><h4>✍️ Practice</h4><p>Build a weekly Instagram dashboard with hypotheses and next tests.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can make changes based on evidence rather than intuition alone.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w4"> Mark Week 4 deliverable complete</label></div></section><section class="module" id="week-5"><div class="module-head"><span class="week">WEEK 5</span><div><h2>TikTok Mastery</h2><p>Learn TikTok-native storytelling, discovery, search behavior, engagement, commercial content, account health, and safety.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>How TikTok Strategy Works</h3><h4>📘 Teaching</h4><p>TikTok rewards content that earns viewer attention and interaction, but the platform&#x27;s recommendation and eligibility systems change over time. Learn current platform guidance instead of relying on old &#x27;algorithm hacks&#x27;.</p><h4>💼 Real Manager Scenario</h4><p>A good TikTok strategy focuses on viewer value, strong creative, authentic participation, and clear audience relevance rather than trying to trick distribution.</p><h4>✍️ Practice</h4><p>Create five TikTok series concepts with audience, promise, format, and repeatable structure.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can build a content series rather than chase isolated viral posts.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>TikTok Search and Discoverability</h3><h4>📘 Teaching</h4><p>Social search uses keywords, spoken language, captions, on-screen text, and topic relevance to help users discover content. Make the topic obvious without stuffing unrelated keywords.</p><h4>💼 Real Manager Scenario</h4><p>A tutorial titled and spoken around the exact problem people search for can be easier to understand and discover.</p><h4>✍️ Practice</h4><p>Create ten TikTok concepts targeting specific questions a customer might search.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design for both humans and search discovery.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>TikTok Community and Comments</h3><h4>📘 Teaching</h4><p>Comments can become a content research engine. Responding thoughtfully, creating reply videos where appropriate, and identifying recurring questions helps build a feedback loop.</p><h4>💼 Real Manager Scenario</h4><p>A comment saying &#x27;Does this work for oily skin?&#x27; can become a dedicated follow-up video.</p><h4>✍️ Practice</h4><p>Create a comment-to-content workflow with moderation and escalation rules.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can turn audience interaction into a repeatable content pipeline.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Commercial Content and Creator Disclosure</h3><h4>📘 Teaching</h4><p>Sponsored, affiliate, or promotional content must follow platform rules and applicable disclosure requirements. The manager should know when a post is commercial and what disclosure tool or label the platform requires.</p><h4>💼 Real Manager Scenario</h4><p>A creator promoting a product for compensation should not hide the material relationship.</p><h4>✍️ Practice</h4><p>Create a commercial-content checklist covering disclosure, claims, rights, landing page, and approval.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can separate editorial content from commercial obligations.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>TikTok Policy and Account Health</h3><h4>📘 Teaching</h4><p>TikTok&#x27;s Community Guidelines apply broadly, and its Creator Code of Conduct adds standards for creators participating in promotional and monetization programs. Policy changes can affect recommendation eligibility, features, or monetization.</p><h4>💼 Real Manager Scenario</h4><p>A post can be removed or become ineligible for recommendation even when it is not the kind of severe violation people imagine. Policy reading is part of professional social management.</p><h4>✍️ Practice</h4><p>Build a pre-publication TikTok safety checklist and policy-escalation procedure.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can treat policy as an operating requirement rather than an afterthought.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w5"> Mark Week 5 deliverable complete</label></div></section><section class="module" id="week-6"><div class="module-head"><span class="week">WEEK 6</span><div><h2>YouTube Mastery</h2><p>Learn YouTube from channel architecture through Shorts, long-form video, thumbnails, titles, analytics, copyright, and monetization.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>YouTube Channel Architecture</h3><h4>📘 Teaching</h4><p>A channel should make its promise clear. Organize branding, descriptions, playlists, featured content, channel sections, links, and contact information around the audience.</p><h4>💼 Real Manager Scenario</h4><p>A business channel can organize videos by product education, case studies, tutorials, customer stories, and webinars.</p><h4>✍️ Practice</h4><p>Create a channel map for a fictional brand.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can turn a library of videos into a coherent content destination.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Long-Form Video Strategy</h3><h4>📘 Teaching</h4><p>Long-form video can support education, search, storytelling, trust, product research, and deeper relationships. Structure matters: promise, setup, progression, proof, payoff, next action.</p><h4>💼 Real Manager Scenario</h4><p>A 10-minute tutorial should earn attention throughout rather than spending the first three minutes on unrelated introductions.</p><h4>✍️ Practice</h4><p>Write a video brief with title options, opening, chapters, proof points, CTA, and thumbnail concept.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design useful long-form content before filming.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Shorts Strategy</h3><h4>📘 Teaching</h4><p>Shorts require concise storytelling and platform-native pacing. They can also introduce people to longer videos or other parts of a content ecosystem.</p><h4>💼 Real Manager Scenario</h4><p>A long tutorial can generate several short clips, but each Short needs its own standalone value and context.</p><h4>✍️ Practice</h4><p>Create five Shorts derived from one long-form topic while ensuring each works independently.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can repurpose without producing low-value duplicates.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Titles, Thumbnails, and Retention</h3><h4>📘 Teaching</h4><p>Titles and thumbnails create expectations. Retention shows where viewers continue or leave. Strong packaging must match the actual content; misleading packaging can damage trust and performance.</p><h4>💼 Real Manager Scenario</h4><p>A dramatic title that promises one result but delays or never delivers it may create clicks but poor satisfaction.</p><h4>✍️ Practice</h4><p>Analyze a fictional retention graph and propose three packaging/content changes.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can connect packaging decisions to audience behavior.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>YouTube Monetization and Policy</h3><h4>📘 Teaching</h4><p>YouTube monetization is tied to the YouTube Partner Program, channel monetization policies, advertiser-friendly rules, copyright, and other program requirements. YouTube&#x27;s official help currently states that YPP eligibility includes policy compliance, availability in the region, and no active Community Guidelines strikes; YouTube also announced YPP updates taking effect February 1, 2027, so current thresholds and terms must be checked before giving a creator advice.</p><h4>💼 Real Manager Scenario</h4><p>A creator asks, &#x27;Am I monetization-ready?&#x27; You review the official YPP status, current channel policy record, originality, copyright, advertiser suitability, and payment setup rather than promising approval.</p><h4>✍️ Practice</h4><p>Create a YouTube monetization readiness audit: channel status, originality, copyright, policy issues, advertiser safety, and YPP status.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can evaluate monetization readiness without promising approval.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w6"> Mark Week 6 deliverable complete</label></div></section><section class="module" id="week-7"><div class="module-head"><span class="week">WEEK 7</span><div><h2>LinkedIn, X, Pinterest, Snapchat, Reddit, and Twitch</h2><p>Learn how to manage additional platforms and understand their very different cultures, discovery systems, community rules, and monetization models.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>LinkedIn for Brands and Creators</h3><h4>📘 Teaching</h4><p>LinkedIn is built around professional identity, expertise, relationships, and business conversation. Content should be relevant and constructive rather than generic engagement bait. LinkedIn&#x27;s Professional Community Policies also restrict spam and artificial engagement.</p><h4>💼 Real Manager Scenario</h4><p>A founder&#x27;s useful industry lesson can outperform a generic motivational post because it gives the professional audience something concrete to learn.</p><h4>✍️ Practice</h4><p>Create a seven-post LinkedIn series for a fictional founder.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can adapt a message to professional audiences.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>X: Conversation and Original Content</h3><h4>📘 Teaching</h4><p>X is conversation-driven. Current X documentation says the Creator Revenue Sharing program was retired September 7, 2026 and is being replaced by an Original Content Rewards Program. The new program focuses on original content and qualified impressions, with specific eligibility and integrity requirements.</p><h4>💼 Real Manager Scenario</h4><p>A Social Media Manager must never teach creators using old monetization requirements without checking current X documentation.</p><h4>✍️ Practice</h4><p>Create an X content system using original commentary, threads, replies, visuals, and an account-safety checklist.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can separate current policy from outdated creator advice.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Pinterest: Search and Commercial Discovery</h3><h4>📘 Teaching</h4><p>Pinterest behaves more like visual discovery/search than a conventional chronological social feed. Creators can use business accounts, analytics, product tagging/affiliate opportunities, and paid partnerships where available. Pinterest documentation also provides paid partnership labeling tools.</p><h4>💼 Real Manager Scenario</h4><p>A recipe or home-design brand can build evergreen discovery through keywords, visual packaging, boards, and destination links.</p><h4>✍️ Practice</h4><p>Create 10 Pin concepts with keyword intent, visual format, destination, and measurement.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design for discovery and intent rather than follower count alone.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Snapchat, Reddit, and Twitch</h3><h4>📘 Teaching</h4><p>Snapchat emphasizes Stories, Spotlight, and direct community experiences. Reddit is community-based and culture-specific; each subreddit can have its own rules. Twitch is centered on live community and creator interaction. Management must respect the culture of each platform rather than cross-posting blindly.</p><h4>💼 Real Manager Scenario</h4><p>A promotional post that works on Instagram can feel like spam on Reddit. A live-stream community needs a different moderation plan from an image feed.</p><h4>✍️ Practice</h4><p>Create a platform-culture matrix comparing format, audience behavior, community norms, monetization route, and risk.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can adapt strategy rather than treating every network the same.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Cross-Platform Repurposing Without Duplication</h3><h4>📘 Teaching</h4><p>Repurposing means extracting ideas and adapting them to platform-native formats. Simply downloading a video with another platform&#x27;s watermark and reposting it everywhere can create quality and policy issues.</p><h4>💼 Real Manager Scenario</h4><p>One webinar can become a YouTube video, Shorts, TikToks, Instagram Reels, LinkedIn insight posts, and Pinterest graphics, each rewritten for its audience.</p><h4>✍️ Practice</h4><p>Build a repurposing map from one source asset into eight platform-specific outputs.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can scale production while preserving native quality.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w7"> Mark Week 7 deliverable complete</label></div></section><section class="module" id="week-8"><div class="module-head"><span class="week">WEEK 8</span><div><h2>Content Production and Creative Direction</h2><p>Learn the production workflow: ideation, briefs, scripts, filming, editing, design, captions, assets, accessibility, and approval.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Content Briefs</h3><h4>📘 Teaching</h4><p>A content brief tells the creator what needs to be made, for whom, why, in what format, with what message, CTA, proof, references, and constraints.</p><h4>💼 Real Manager Scenario</h4><p>A designer should not receive &#x27;make a nice Instagram post.&#x27; A brief should explain objective, audience, copy, dimensions, brand cues, deadline, and approval owner.</p><h4>✍️ Practice</h4><p>Create five content briefs for mixed formats.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can direct production without micromanaging every creative choice.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Hooks, Story Structure, and Payoff</h3><h4>📘 Teaching</h4><p>A hook establishes relevance or curiosity quickly. Story structure gives viewers a reason to continue. A payoff delivers what was promised. Strong content does not need deception.</p><h4>💼 Real Manager Scenario</h4><p>A before/after demonstration creates a clear question, process, evidence, and result.</p><h4>✍️ Practice</h4><p>Write ten hooks and pair each with a complete story arc.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can write attention-oriented content that still delivers real value.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Video and Design QA</h3><h4>📘 Teaching</h4><p>QA checks dimensions, crops, captions, spelling, brand elements, sound, links, claims, accessibility, and platform requirements. Inspect the actual rendered asset, not just the project file.</p><h4>💼 Real Manager Scenario</h4><p>A video may look fine in the editor but have unreadable captions on mobile or a cropped logo in the feed preview.</p><h4>✍️ Practice</h4><p>Create a 30-point visual QA checklist and use it on five mock assets.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You catch production errors before publication.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Accessibility and Inclusive Content</h3><h4>📘 Teaching</h4><p>Accessible social content considers captions, readable contrast, descriptive text where supported, flashing/visual sensitivity, clear language, and inclusive representation. Accessibility improves usability for many people, not only those with formal accommodations.</p><h4>💼 Real Manager Scenario</h4><p>A video with accurate captions can work for viewers in noisy environments as well as viewers who cannot hear the audio.</p><h4>✍️ Practice</h4><p>Audit five sample posts for accessibility and propose improvements.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You include accessibility in normal production rather than as a last-minute add-on.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Approvals and Version Control</h3><h4>📘 Teaching</h4><p>Approval workflows reduce risk by making it clear who can review, approve, publish, and request changes. Version control prevents outdated copy or creative from going live.</p><h4>💼 Real Manager Scenario</h4><p>A campaign may have a legal-approved version and an older draft. The publishing workflow must make the approved version unmistakable.</p><h4>✍️ Practice</h4><p>Design an approval matrix with content owner, designer, legal/compliance reviewer, marketing lead, and publisher.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can prevent avoidable publishing errors.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w8"> Mark Week 8 deliverable complete</label></div></section><section class="module" id="week-9"><div class="module-head"><span class="week">WEEK 9</span><div><h2>Community Management and Social Customer Care</h2><p>Learn comment moderation, DMs, escalation, crisis handling, community building, and response systems.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Community Management</h3><h4>📘 Teaching</h4><p>Community management is relationship work. It includes responding, moderating, welcoming, learning from feedback, and maintaining a consistent tone. The community is also a source of market intelligence.</p><h4>💼 Real Manager Scenario</h4><p>A customer comment can reveal a product flaw, common objection, or content idea.</p><h4>✍️ Practice</h4><p>Create a response taxonomy for praise, question, complaint, troll, spam, sensitive issue, and sales inquiry.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can respond consistently without using robotic scripts for every situation.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Comment and DM Prioritization</h3><h4>📘 Teaching</h4><p>Not every interaction has equal priority. Build categories for urgent safety/legal issues, customer complaints, buying questions, routine questions, positive feedback, spam, and abuse.</p><h4>💼 Real Manager Scenario</h4><p>A potential medical misinformation issue may need faster escalation than a request for a store opening time.</p><h4>✍️ Practice</h4><p>Create an inbox priority queue and escalation SLA for a fictional brand.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can protect both responsiveness and judgment.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Crisis Communications</h3><h4>📘 Teaching</h4><p>A social crisis is a high-risk situation where public attention, misinformation, customer harm, legal exposure, or reputation risk can escalate quickly. The social manager should confirm facts, avoid speculation, coordinate with authorized spokespeople, and document decisions.</p><h4>💼 Real Manager Scenario</h4><p>A screenshot of a complaint can spread before the company verifies the underlying event. Do not improvise a legal or factual claim simply to be first.</p><h4>✍️ Practice</h4><p>Build a crisis playbook: detect → verify → classify → escalate → draft → approve → publish → monitor → document → postmortem.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can manage uncertainty without creating additional risk.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Moderation and Safety</h3><h4>📘 Teaching</h4><p>Moderation includes identifying spam, harassment, impersonation, dangerous content, privacy issues, and other rule violations. Platform reporting tools should be used according to each platform&#x27;s rules.</p><h4>💼 Real Manager Scenario</h4><p>A community manager should not publicly argue with an abusive account or expose private information while trying to defend the brand.</p><h4>✍️ Practice</h4><p>Create a moderation decision tree and a sample escalation log.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can moderate professionally and document important actions.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Community to Content Feedback Loop</h3><h4>📘 Teaching</h4><p>The best social teams turn community questions into content, product feedback, FAQs, scripts, ads, and customer education.</p><h4>💼 Real Manager Scenario</h4><p>If five customers ask the same question in a week, the team may need a content asset and a product/FAQ update.</p><h4>✍️ Practice</h4><p>Build a weekly system for turning 20 interactions into content opportunities and business insights.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can make community management contribute to strategy.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w9"> Mark Week 9 deliverable complete</label></div></section><section class="module" id="week-10"><div class="module-head"><span class="week">WEEK 10</span><div><h2>Analytics and Reporting Mastery</h2><p>Learn the numbers that matter: reach, impressions, engagement, watch time, retention, clicks, conversion, audience growth, and ROI.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Metrics Vocabulary</h3><h4>📘 Teaching</h4><p>Learn the difference between reach, impressions, views, plays, engagement, engagement rate, watch time, retention, CTR, conversion rate, follower growth, and revenue. Each platform defines metrics differently, so always check the source.</p><h4>💼 Real Manager Scenario</h4><p>A video can have high views but low average watch time. That tells a different story from a video with fewer views but strong retention.</p><h4>✍️ Practice</h4><p>Create a glossary sheet with 30 metrics and write the business question each metric can answer.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can explain what a metric means before reporting it.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Vanity Metrics vs Business Metrics</h3><h4>📘 Teaching</h4><p>Vanity metrics look impressive but may not predict meaningful outcomes. Business metrics connect social activity to leads, sales, retention, customer service, or brand outcomes.</p><h4>💼 Real Manager Scenario</h4><p>A million impressions may be useful for an awareness goal but not sufficient evidence for a sales campaign.</p><h4>✍️ Practice</h4><p>Map 20 social metrics to three business goals and identify misleading metrics for each.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can avoid reporting numbers without context.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>UTM and Conversion Tracking</h3><h4>📘 Teaching</h4><p>UTM parameters label links so traffic can be analyzed by source, medium, campaign, and content. Conversion tracking connects clicks to downstream actions such as leads or purchases.</p><h4>💼 Real Manager Scenario</h4><p>A campaign link can identify whether traffic came from Instagram Story, TikTok, LinkedIn, or a specific campaign.</p><h4>✍️ Practice</h4><p>Design a UTM naming convention and conversion-tracking plan for a 30-day campaign.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can connect social content to website outcomes.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Dashboards and Weekly Reporting</h3><h4>📘 Teaching</h4><p>A dashboard should answer: what happened, why it might have happened, what matters, and what should change next. Separate data, interpretation, hypothesis, and action.</p><h4>💼 Real Manager Scenario</h4><p>A useful report says reach fell 20%, but saves rose 15% and qualified clicks rose 10%; investigate whether the audience shifted toward higher-intent content.</p><h4>✍️ Practice</h4><p>Build a one-page weekly social report with three insights and three recommended tests.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can turn analytics into management decisions.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Experimentation</h3><h4>📘 Teaching</h4><p>A good social experiment has a hypothesis, one meaningful variable, audience/context, success metric, duration, and learning rule. Avoid declaring winners from tiny or noisy differences without enough evidence.</p><h4>💼 Real Manager Scenario</h4><p>Test two hooks on similar topics rather than changing the hook, topic, format, and CTA at the same time.</p><h4>✍️ Practice</h4><p>Design five social experiments and explain what each could teach you.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can build a learning system instead of guessing.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w10"> Mark Week 10 deliverable complete</label></div></section><section class="module" id="week-11"><div class="module-head"><span class="week">WEEK 11</span><div><h2>Monetization: Build a Social Media Business</h2><p>Learn the major ways creators and brands monetize: platform programs, ads, memberships, subscriptions, gifts, affiliates, sponsorships, products, services, and lead generation.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>The Monetization Ladder</h3><h4>📘 Teaching</h4><p>Monetization can come directly from the platform or indirectly from the audience. Direct methods include revenue-sharing programs, fan funding, subscriptions, and platform bonuses/programs. Indirect methods include sponsorships, affiliate commissions, product sales, services, digital products, and leads.</p><h4>💼 Real Manager Scenario</h4><p>A creator with a smaller but highly relevant audience may earn more from consulting or affiliates than from platform ad revenue.</p><h4>✍️ Practice</h4><p>Create a monetization ladder for three fictional creator profiles.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can match monetization method to audience, offer, and platform rather than assuming ad revenue is the only path.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Platform Monetization vs Business Monetization</h3><h4>📘 Teaching</h4><p>Platform monetization depends on program eligibility and policy compliance. Business monetization depends on a product, offer, partnership, or sales process. The latter can often begin before a platform program is available.</p><h4>💼 Real Manager Scenario</h4><p>A creator can use affiliate links or sponsorships while building toward a platform revenue program, subject to disclosure and platform rules.</p><h4>✍️ Practice</h4><p>Build two revenue models for a fictional creator: platform income and off-platform business income.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can separate revenue source from platform dependency.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Facebook and Instagram Monetization</h3><h4>📘 Teaching</h4><p>Meta offers various creator and business monetization features, but availability, eligibility, and program names can change. Use Meta&#x27;s current professional/monetization status tools and official policy documentation rather than relying on old screenshots or fixed follower thresholds.</p><h4>💼 Real Manager Scenario</h4><p>A professional manager should audit the account&#x27;s current Monetization status, policy issues, content originality, and payment setup before promising a client an income stream.</p><h4>✍️ Practice</h4><p>Create a Meta monetization readiness checklist without hard-coding eligibility numbers.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can evaluate readiness without making unsupported promises.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>TikTok Monetization</h3><h4>📘 Teaching</h4><p>TikTok monetization can include platform programs, LIVE-related features, commerce/affiliate activity, creator collaborations, and brand deals depending on region, account status, product, and current program rules. TikTok says creators participating in monetization programs must also follow its Creator Code of Conduct in addition to Community Guidelines and relevant product policies.</p><h4>💼 Real Manager Scenario</h4><p>A creator wants to earn from TikTok. You map several possible revenue streams, then check which products are actually available to that account and country before recommending a route.</p><h4>✍️ Practice</h4><p>Create a TikTok revenue map with three income streams and the policy checks each requires.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can identify both opportunity and compliance requirements.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>YouTube, X, Snapchat, and Pinterest Monetization</h3><h4>📘 Teaching</h4><p>YouTube uses the YouTube Partner Program and other creator features. X currently uses its Original Content Rewards Program and subscriptions. Snapchat&#x27;s monetization program can share ad revenue for eligible established creators. Pinterest supports affiliate/product opportunities and paid partnerships rather than a simple universal view-based creator payout.</p><h4>💼 Real Manager Scenario</h4><p>A client asks which platform will &#x27;pay the most.&#x27; You resist a simplistic answer and instead compare audience fit, current program availability, eligibility, monetization mechanism, and business model.</p><h4>✍️ Practice</h4><p>Create a current-policy research sheet with the official eligibility page for each platform and a column for &#x27;last checked&#x27;.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can research monetization without presenting changing eligibility as permanent fact.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w11"> Mark Week 11 deliverable complete</label></div></section><section class="module" id="week-12"><div class="module-head"><span class="week">WEEK 12</span><div><h2>Platform Policies, Copyright, and Legal Safety</h2><p>Learn the policy architecture common across platforms and how to perform pre-publication compliance checks.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Community Guidelines vs Monetization Policies</h3><h4>📘 Teaching</h4><p>Community rules govern what can be on a platform. Monetization policies govern what can earn. Advertiser-friendly rules may be stricter than general posting rules. Copyright and trademark are separate legal/IP issues.</p><h4>💼 Real Manager Scenario</h4><p>A video can remain online but still be unsuitable for monetization or advertising. Another can be removed for a community or copyright issue.</p><h4>✍️ Practice</h4><p>Build a policy matrix distinguishing community, monetization, advertiser, copyright, disclosure, and privacy checks.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can identify which rulebook you need to consult.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Copyright, Licensing, and Music</h3><h4>📘 Teaching</h4><p>Owning a social account does not mean you own every image, video, song, font, or clip you can find online. Rights depend on licenses, permissions, platform libraries, contracts, and applicable law.</p><h4>💼 Real Manager Scenario</h4><p>Reposting a viral video because &#x27;everyone uses it&#x27; can still create a rights problem. Commercial use can have additional constraints.</p><h4>✍️ Practice</h4><p>Create a rights checklist for every asset in a fictional campaign.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can stop unsafe content before publication.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Originality and Reused Content</h3><h4>📘 Teaching</h4><p>Platforms may treat copied, minimally changed, repetitive, or reused material differently for recommendations or monetization. YouTube, for example, documents monetization concerns around generic or repetitive content and requires substantive value and policy compliance.</p><h4>💼 Real Manager Scenario</h4><p>A manager using AI or templates should make sure each piece contains meaningful original value rather than mass-produced near-duplicates.</p><h4>✍️ Practice</h4><p>Audit 20 content ideas for originality risk and propose transformations.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can scale production without building a library of low-value duplicates.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Disclosures and Commercial Content</h3><h4>📘 Teaching</h4><p>Brand sponsorships, affiliates, gifted products, and other material relationships may require clear disclosure. Platform tools and local advertising rules should be checked for the specific context.</p><h4>💼 Real Manager Scenario</h4><p>A creator who receives compensation should not disguise an advertisement as an ordinary independent recommendation.</p><h4>✍️ Practice</h4><p>Create a commercial-content disclosure checklist covering the relationship, platform tool/label, copy, claims, and approval.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can recognize when a post becomes commercial.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Policy Monitoring and Appeals</h3><h4>📘 Teaching</h4><p>Policies change. A professional manager maintains a policy watchlist, records the date official guidance was checked, tracks account status, and knows the appeal/reporting path when a decision appears mistaken.</p><h4>💼 Real Manager Scenario</h4><p>When a platform removes content, do not rely on memory or screenshots from another year. Read the current policy cited in the notice.</p><h4>✍️ Practice</h4><p>Build a policy-change tracker with platform, policy area, URL, date checked, change summary, and action required.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can keep a social operation current as rules change.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w12"> Mark Week 12 deliverable complete</label></div></section><section class="module" id="week-13"><div class="module-head"><span class="week">WEEK 13</span><div><h2>Paid Social and Advertising Foundations</h2><p>Understand Meta Ads and the general logic of paid social without confusing organic social management with media buying.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Paid Social Fundamentals</h3><h4>📘 Teaching</h4><p>Paid social uses budget to distribute ads to chosen audiences and objectives. The manager must understand campaigns, ad sets/ad groups, creatives, audiences, placements, budgets, bidding, optimization, and measurement even if a specialist executes buys.</p><h4>💼 Real Manager Scenario</h4><p>A campaign goal changes the setup. Lead generation is different from video views; sales is different from awareness.</p><h4>✍️ Practice</h4><p>Draw a generic paid-social account structure and explain each level.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can talk intelligently with a paid-media specialist.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Meta Ads Foundations</h3><h4>📘 Teaching</h4><p>Understand objectives, audiences, creative, placements, budgets, learning, pixels/datasets or other conversion signals, and reporting at a conceptual level. UI names can change, so prioritize the underlying logic.</p><h4>💼 Real Manager Scenario</h4><p>A creative may be excellent but fail because the offer, landing page, or audience is mismatched.</p><h4>✍️ Practice</h4><p>Create a fictional Meta campaign brief for a lead-generation objective.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can brief paid media without pretending to know every current interface detail.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Creative Testing</h3><h4>📘 Teaching</h4><p>Paid and organic teams can learn from each other. Test hooks, offers, formats, proof, thumbnails, and messages while controlling meaningful variables.</p><h4>💼 Real Manager Scenario</h4><p>If three creatives all target the same audience but one clearly communicates the offer, creative testing can reveal a message advantage.</p><h4>✍️ Practice</h4><p>Design a five-creative testing matrix with hypotheses and measurement rules.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can connect creative learning to paid performance.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Landing Pages and Conversion</h3><h4>📘 Teaching</h4><p>Social does not end at the click. The landing page, form, offer, speed, trust signals, and follow-up affect conversion. A social manager needs enough understanding to identify broken handoffs.</p><h4>💼 Real Manager Scenario</h4><p>A high CTR followed by low form completion may point to a landing-page or offer problem rather than a social-content problem.</p><h4>✍️ Practice</h4><p>Map a complete social-to-conversion journey and identify five possible failure points.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You think beyond the platform.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>ROAS, CPA, CPL, and Attribution</h3><h4>📘 Teaching</h4><p>ROAS measures revenue relative to ad spend. CPA measures cost per acquisition/action. CPL measures cost per lead. Attribution asks which touchpoints receive credit for an outcome. Attribution is imperfect and model-dependent.</p><h4>💼 Real Manager Scenario</h4><p>A campaign may have good last-click ROAS while contributing to people who later convert through another channel.</p><h4>✍️ Practice</h4><p>Create a paid-social report that separates platform-reported metrics from business-level outcomes.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can discuss performance without overstating causality.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w13"> Mark Week 13 deliverable complete</label></div></section><section class="module" id="week-14"><div class="module-head"><span class="week">WEEK 14</span><div><h2>Social Operations, Automation, and AI</h2><p>Build a scalable content machine using Notion or similar systems, automation tools, and supervised AI.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Central Social Media Workspace</h3><h4>📘 Teaching</h4><p>Create one source of truth for content ideas, briefs, assets, captions, approvals, publishing status, platform versions, analytics, rights, and postmortems. Notion can be used for this, while specialized tools may remain the authoritative source for publishing or ads.</p><h4>💼 Real Manager Scenario</h4><p>A single content database can have views for Ideas, Drafting, QA, Awaiting Approval, Scheduled, Published, Repurpose, and Learnings.</p><h4>✍️ Practice</h4><p>Design a Notion social-media command center with databases for Content, Platforms, Campaigns, Assets, Partners, and Analytics.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design a social operation that does not depend on memory.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Automation Architecture</h3><h4>📘 Teaching</h4><p>Use a safe automation pattern: Trigger → Data → Condition → Action → Human QA → Exception → Log. Automation should remove repetitive work, not replace strategic judgment.</p><h4>💼 Real Manager Scenario</h4><p>When a content item becomes Approved, an automation can create platform-specific tasks and notify the publisher. Sending public posts automatically without the required review may be unsafe.</p><h4>✍️ Practice</h4><p>Design five automations for content intake, approvals, reminders, reporting, and repurposing.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can identify what should and should not be automated.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Notion + Zapier + Make</h3><h4>📘 Teaching</h4><p>Notion can act as a central operating workspace. Zapier and Make can move information between apps and run multi-step logic. The exact integrations and limits change, so test using non-sensitive sample data first.</p><h4>💼 Real Manager Scenario</h4><p>A form can create a content record; approval can create tasks; publishing can log a URL; performance data can feed a report.</p><h4>✍️ Practice</h4><p>Build a tool-stack diagram showing what each system owns and how data moves.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can build a connected system without creating duplicate sources of truth.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>AI for Social Media</h3><h4>📘 Teaching</h4><p>AI can help brainstorm, summarize analytics, draft captions, transform a long-form idea into multiple formats, classify comments, and assist with scripts. Human review is required for accuracy, originality, sensitive issues, rights, and brand voice.</p><h4>💼 Real Manager Scenario</h4><p>AI can generate ten captions quickly, but the manager still checks claims, brand fit, platform policies, disclosure, and whether the output sounds like the actual brand.</p><h4>✍️ Practice</h4><p>Create an AI prompt library for strategy, captions, scripts, community triage, trend analysis, and reporting.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can use AI as a supervised production assistant.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Automation QA and Disaster Recovery</h3><h4>📘 Teaching</h4><p>Every automated system needs logs, test cases, permission boundaries, exception routes, and a manual fallback. Ask what happens if a field is blank, a platform changes, the wrong account is selected, or an approval is missing.</p><h4>💼 Real Manager Scenario</h4><p>A publishing workflow that accidentally posts a draft to the wrong brand account can create a reputational incident.</p><h4>✍️ Practice</h4><p>Create a five-test QA plan and a manual recovery checklist for your social system.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design systems that fail safely.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w14"> Mark Week 14 deliverable complete</label></div></section><section class="module" id="week-15"><div class="module-head"><span class="week">WEEK 15</span><div><h2>Social Growth, Monetization, and Creator Management</h2><p>Learn to build sustainable growth systems, creator partnerships, sponsorship operations, and monetization plans.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Growth Loops</h3><h4>📘 Teaching</h4><p>A growth loop explains how one successful action creates more opportunities: content generates discovery, discovery creates engagement, engagement creates followers or leads, customers create proof, proof becomes more content.</p><h4>💼 Real Manager Scenario</h4><p>Customer questions can generate content; useful content generates customers; customer stories generate proof content.</p><h4>✍️ Practice</h4><p>Design three growth loops for three fictional businesses.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design growth beyond &#x27;post consistently.&#x27;</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Creator and Influencer Partnerships</h3><h4>📘 Teaching</h4><p>Creator marketing requires fit, audience quality, deliverables, fees, usage rights, disclosure, timelines, approval, measurement, and relationship management. Follower count alone is not enough.</p><h4>💼 Real Manager Scenario</h4><p>A smaller creator with an audience closely matching the buyer may be more useful for a niche campaign than a very large general audience.</p><h4>✍️ Practice</h4><p>Build a creator brief, vetting sheet, deliverables table, and campaign scorecard.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can manage creator relationships professionally.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Sponsorship and Brand Deals</h3><h4>📘 Teaching</h4><p>A sponsorship is a commercial relationship. The manager should clarify deliverables, exclusivity, usage rights, deadlines, payment terms, disclosure, content approval, and reporting.</p><h4>💼 Real Manager Scenario</h4><p>A brand may want to reuse a creator&#x27;s video in paid ads. That usage right should be agreed explicitly rather than assumed from the posting fee.</p><h4>✍️ Practice</h4><p>Create a sponsorship negotiation checklist and sample campaign agreement outline, leaving legal terms for qualified counsel.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can identify commercial details that need to be agreed.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Affiliate and Product Monetization</h3><h4>📘 Teaching</h4><p>Affiliate monetization pays a commission when qualified purchases or actions happen through tracked links or codes. Product monetization includes physical products, digital products, memberships, courses, services, and commerce features.</p><h4>💼 Real Manager Scenario</h4><p>A creator can recommend products connected to a real audience need and measure clicks, conversion rate, and commission instead of chasing views only.</p><h4>✍️ Practice</h4><p>Create a 30-day affiliate/product content plan with disclosure and tracking.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can build an ethical revenue system connected to genuine audience value.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Monetization Forecast and Risk</h3><h4>📘 Teaching</h4><p>Revenue estimates should use assumptions: audience size, qualified traffic, conversion, average order value, commission, sponsorship rate, platform payout assumptions, and costs. Never treat uncertain platform payouts as guaranteed income.</p><h4>💼 Real Manager Scenario</h4><p>A creator planning monthly income can model conservative, base, and optimistic scenarios instead of promising a fixed payout from views.</p><h4>✍️ Practice</h4><p>Build a three-scenario monetization spreadsheet concept and list five risks that could reduce revenue.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can forecast transparently and identify platform dependency.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w15"> Mark Week 15 deliverable complete</label></div></section><section class="module" id="week-16"><div class="module-head"><span class="week">WEEK 16</span><div><h2>Capstone: Run a Complete Social Media Department</h2><p>Integrate strategy, content, community, analytics, monetization, policy, automation, and reporting into a professional operating system.</p></div></div><div class="lesson-grid"><article class="lesson"><div class="lesson-num">LESSON 1</div><h3>Capstone Brief: The Brand</h3><h4>📘 Teaching</h4><p>You are hired as Social Media Manager for a growing company with Facebook, Instagram, TikTok, YouTube, LinkedIn, X, Pinterest, Snapchat, and community channels. You inherit an inconsistent content archive, unclear permissions, mixed branding, and weak reporting.</p><h4>💼 Real Manager Scenario</h4><p>On day one, leadership asks why social performance is weak. Your first job is to audit the system and establish a fact-based baseline before changing the calendar.</p><h4>✍️ Practice</h4><p>Create a 30-day audit covering account health, content, community, analytics, monetization, policy, rights, and tooling.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can diagnose a social function before recommending changes.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 2</div><h3>Capstone: 30-Day Content Engine</h3><h4>📘 Teaching</h4><p>Create a 30-day multi-platform calendar with content pillars, platform-native versions, production briefs, approval gates, publishing schedule, community plan, and repurposing map.</p><h4>💼 Real Manager Scenario</h4><p>Your deliverable should show why each platform receives its particular format instead of blindly duplicating one post.</p><h4>✍️ Practice</h4><p>Produce the full calendar plus 10 detailed creative briefs.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can operate a multi-platform editorial system.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 3</div><h3>Capstone: Analytics and Growth Plan</h3><h4>📘 Teaching</h4><p>Build a weekly dashboard and monthly report. Include platform metrics, business outcomes, audience insights, top and weak content, experiments, and next actions.</p><h4>💼 Real Manager Scenario</h4><p>Separate observed data from your interpretation and hypotheses.</p><h4>✍️ Practice</h4><p>Produce four weekly report templates and a monthly executive summary.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can turn social data into management decisions.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 4</div><h3>Capstone: Monetization + Compliance</h3><h4>📘 Teaching</h4><p>Create a monetization plan using platform programs, partnerships, affiliate/product opportunities, and lead generation. Pair each route with eligibility research, disclosure, copyright, account-health, and policy checks.</p><h4>💼 Real Manager Scenario</h4><p>A creator wants to activate every monetization option immediately. Your job is to sequence opportunities, identify prerequisites, and document the compliance checks before activation.</p><h4>✍️ Practice</h4><p>Build a policy tracker and monetization readiness matrix using official platform documentation and account-specific status pages.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can pursue revenue without ignoring rules or making unsupported eligibility claims.</p></div></article><article class="lesson"><div class="lesson-num">LESSON 5</div><h3>Capstone: Social Media Operating Manual</h3><h4>📘 Teaching</h4><p>Deliver the final Social Media Playbook: strategy, platform standards, content workflow, QA, community SOP, crisis plan, analytics, monetization, rights management, tool stack, automation map, AI policy, and 90-day improvement plan.</p><h4>💼 Real Manager Scenario</h4><p>The goal is a repeatable department that another trained manager could operate after reading the manual.</p><h4>✍️ Practice</h4><p>Submit the complete playbook and defend five strategic decisions in a mock management presentation.</p><div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can manage social as a business function, not merely a posting queue.</p></div></article></div><div class="deliverable"><h3>🏁 Weekly Mastery Deliverable</h3><p>Finish the five lessons, complete the practices, and save the resulting work in your portfolio. Then check the box below.</p><label><input type="checkbox" class="progress-check" data-key="w16"> Mark Week 16 deliverable complete</label></div></section></section>
+<section id="platforms" class="tab hidden"><div class="card"><h2>Platform Lab</h2><p>Do not manage every platform as though it were the same app. Compare culture, format, discovery, analytics, community expectations, monetization, and risk.</p><div class="table-wrap"><table><thead><tr><th>Platform</th><th>Core operating question</th><th>Manager exercise</th></tr></thead><tbody>
+<tr><td><strong>Facebook</strong></td><td>How do we build community, video, local/customer communication, and measurable outcomes?</td><td>Build a 7-day Page plan + community queue.</td></tr>
+<tr><td><strong>Instagram</strong></td><td>How do we turn visual storytelling and community into discovery and business action?</td><td>Build a Reels/Stories/carousel system.</td></tr>
+<tr><td><strong>TikTok</strong></td><td>What can we make that is native, useful, searchable, and genuinely watchable?</td><td>Build five recurring series and a policy check.</td></tr>
+<tr><td><strong>YouTube</strong></td><td>How do we build a searchable library and deeper audience relationship?</td><td>Build long-form + Shorts content architecture.</td></tr>
+<tr><td><strong>LinkedIn</strong></td><td>What expertise or business conversation can we contribute?</td><td>Build a professional thought-leadership series.</td></tr>
+<tr><td><strong>X</strong></td><td>How do we contribute original perspective to live conversation?</td><td>Build an original commentary system + policy watch.</td></tr>
+<tr><td><strong>Pinterest</strong></td><td>How do we win visual search and commercial discovery?</td><td>Build an evergreen Pin library with keywords and destinations.</td></tr>
+<tr><td><strong>Snapchat</strong></td><td>How do we build authentic, frequent Stories/Spotlight experiences?</td><td>Create a Story/Spotlight system and monetization readiness audit.</td></tr>
+<tr><td><strong>Reddit</strong></td><td>How do we participate without treating community spaces like ad placements?</td><td>Research three subreddit rules before proposing any activity.</td></tr>
+<tr><td><strong>Twitch</strong></td><td>How do we manage live community, moderation, schedules, and creator relationships?</td><td>Build a live-stream runbook and moderation plan.</td></tr>
+</tbody></table></div></div></section>
+<section id="money" class="tab hidden"><div class="card"><h2>Monetization Lab</h2><p><strong>Rule:</strong> Never present a platform payout as guaranteed. Eligibility, program names, requirements, regional availability, account standing, and payout rules can change.</p><h3>The 8 Main Revenue Routes</h3><ol><li><strong>Platform revenue sharing:</strong> eligible ads or platform revenue programs.</li><li><strong>Fan funding:</strong> subscriptions, gifts, memberships, tips, or similar features where available.</li><li><strong>Sponsorships:</strong> brands pay for agreed creator/content deliverables.</li><li><strong>Affiliate income:</strong> commission from tracked sales or actions.</li><li><strong>Commerce:</strong> direct product sales through platform or linked storefronts.</li><li><strong>Services:</strong> consulting, coaching, production, freelance services, or agency work.</li><li><strong>Digital products:</strong> courses, templates, memberships, downloads, and other owned products.</li><li><strong>Lead generation:</strong> social content creates qualified business opportunities that convert elsewhere.</li></ol><div class="callout"><strong>Professional approach:</strong> Build an owned-business revenue path even when platform monetization is unavailable. Platform payouts are one possible layer of a larger business model.</div><h3>Monetization Readiness Audit</h3><p>Account type → age/identity rules → region → account standing → originality → audience/activity requirements → content eligibility → advertiser suitability → commercial disclosures → copyright/rights → payment setup → tax/identity requirements → program-specific rules → current official source → date last checked.</p></div></section>
+<section id="policies" class="tab hidden"><div class="card"><h2>Policy Center</h2><p>Policies are living documents. Use the official pages below as your primary source. Record the date you checked them and the relevant policy area in your Policy Watchlist.</p><div class="callout"><strong>Current-change examples:</strong> TikTok published updated Community Guidelines in August 2025 that took effect September 13, 2025. X's former Creator Revenue Sharing was retired September 7, 2026 and X introduced its Original Content Rewards program. YouTube currently states that YPP updates are scheduled to take effect February 1, 2027. These examples show why a Social Media Manager must verify current rules rather than memorize old thresholds.</div><div class="table-wrap"><table><thead><tr><th>Platform</th><th>Official resource</th></tr></thead><tbody><tr><td>Meta / Facebook</td><td><a href="https://www.facebook.com/business/help/169845596919485" target="_blank" rel="noopener">Meta Business Help Center — Partner Monetization Policies</a></td></tr><tr><td>Instagram</td><td><a href="https://help.instagram.com/" target="_blank" rel="noopener">Instagram Help Center — Account and safety / professional resources</a></td></tr><tr><td>TikTok</td><td><a href="https://www.tiktok.com/community-guidelines/" target="_blank" rel="noopener">TikTok Community Guidelines / Safety Center</a></td></tr><tr><td>TikTok</td><td><a href="https://support.tiktok.com/en/safety-hc/account-and-user-safety/Creator-code-of-conduct" target="_blank" rel="noopener">TikTok Creator Code of Conduct</a></td></tr><tr><td>YouTube</td><td><a href="https://support.google.com/youtube/answer/2802032" target="_blank" rel="noopener">YouTube Community Guidelines / strikes</a></td></tr><tr><td>YouTube</td><td><a href="https://support.google.com/youtube/answer/72851" target="_blank" rel="noopener">YouTube Partner Program eligibility</a></td></tr><tr><td>YouTube</td><td><a href="https://support.google.com/youtube/answer/1311392" target="_blank" rel="noopener">YouTube channel monetization policies</a></td></tr><tr><td>LinkedIn</td><td><a href="https://www.linkedin.com/legal/professional-community-policies" target="_blank" rel="noopener">LinkedIn Professional Community Policies</a></td></tr><tr><td>X</td><td><a href="https://help.x.com/en/rules-and-policies" target="_blank" rel="noopener">X Rules and Policies</a></td></tr><tr><td>X</td><td><a href="https://help.x.com/en/using-x/original-content-rewards" target="_blank" rel="noopener">X Original Content Rewards Program</a></td></tr><tr><td>Pinterest</td><td><a href="https://help.pinterest.com/en/resources/creators" target="_blank" rel="noopener">Pinterest creator resources</a></td></tr><tr><td>Pinterest</td><td><a href="https://help.pinterest.com/en/business/article/paid-partnerships-for-creators" target="_blank" rel="noopener">Pinterest paid partnerships for creators</a></td></tr><tr><td>Snapchat</td><td><a href="https://help.snapchat.com/hc/en-us/articles/14669003687444-About-Snapchat-s-Monetization-Program" target="_blank" rel="noopener">Snapchat Monetization Program</a></td></tr><tr><td>Snapchat</td><td><a href="https://help.snapchat.com/hc/en-us/articles/7012309512724-What-are-Creator-Rewards-and-how-can-I-earn-them" target="_blank" rel="noopener">Snapchat Creator Rewards</a></td></tr><tr><td>Reddit</td><td><a href="https://www.reddit.com/policies/content-policy" target="_blank" rel="noopener">Reddit Content Policy</a></td></tr><tr><td>Twitch</td><td><a href="https://safety.twitch.tv/" target="_blank" rel="noopener">Twitch Safety Center</a></td></tr></tbody></table></div><h3>Pre-Publication Policy Checklist</h3><p>1) Is the content allowed? 2) Is it eligible for recommendation/discovery? 3) Is it monetizable? 4) Are copyright/rights cleared? 5) Is a commercial relationship disclosed? 6) Are claims substantiated? 7) Is personal/sensitive data protected? 8) Is the selected account correct? 9) Is the asset original enough? 10) Has the current policy/status been checked for unusual or high-risk content?</p></div></section>
+<section id="glossary" class="tab hidden"><div class="card"><h2>Social Media Manager Glossary</h2><p>Use this like a mini dictionary while studying.</p><input id="glossarySearch" class="search" placeholder="Search: retention, reach, UTM, CPM, monetization, copyright, shadow ban..."><p class="small" id="glossaryCount">112 terms</p><div class="table-wrap"><table id="glossaryTable"><thead><tr><th>Term</th><th>Category</th><th>Plain-English Meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Acquisition</strong></td><td>Growth</td><td>Gaining new customers, users, leads, or followers.</td><td>A campaign designed to generate first-time customers is an acquisition campaign.</td></tr><tr><td><strong>Retention</strong></td><td>Growth</td><td>Keeping customers, users, or audience members over time.</td><td>A subscription business monitors customer retention.</td></tr><tr><td><strong>Reach</strong></td><td>Analytics</td><td>The number of unique people/accounts who saw content, as defined by the platform.</td><td>A post can reach 20,000 accounts.</td></tr><tr><td><strong>Impressions</strong></td><td>Analytics</td><td>The number of times content was displayed, including repeat displays when the platform counts them that way.</td><td>A post may have 50,000 impressions from 30,000 people.</td></tr><tr><td><strong>Engagement</strong></td><td>Analytics</td><td>Interactions with content, such as likes, comments, shares, saves, clicks, or other platform-defined actions.</td><td>A Reel can generate many shares even with fewer likes.</td></tr><tr><td><strong>Engagement Rate</strong></td><td>Analytics</td><td>A ratio comparing engagement with a defined denominator such as reach, impressions, followers, or views.</td><td>A manager may calculate engagement divided by reach.</td></tr><tr><td><strong>View</strong></td><td>Video</td><td>A platform-defined counted video viewing event.</td><td>YouTube, TikTok, and Meta can use different counting rules.</td></tr><tr><td><strong>Watch Time</strong></td><td>Video</td><td>The amount of time viewers spend watching video content.</td><td>Watch time can help evaluate whether longer videos hold attention.</td></tr><tr><td><strong>Retention</strong></td><td>Video</td><td>How much of a video audience continues watching over time.</td><td>A video may lose many viewers in its first 10 seconds.</td></tr><tr><td><strong>CTR</strong></td><td>Analytics</td><td>Click-Through Rate: the percentage of a defined audience that clicks a link or CTA.</td><td>A campaign can have a 2% CTR depending on its denominator.</td></tr><tr><td><strong>Conversion Rate</strong></td><td>Analytics</td><td>The percentage of a defined audience that completes a desired action.</td><td>A landing page might convert 5% of visitors to leads.</td></tr><tr><td><strong>CPL</strong></td><td>Paid Media</td><td>Cost Per Lead: ad spend divided by qualified or tracked leads according to the report definition.</td><td>$500 spend / 25 leads = $20 CPL.</td></tr><tr><td><strong>CPA</strong></td><td>Paid Media</td><td>Cost Per Acquisition/Action: cost divided by completed acquisitions or actions.</td><td>$1,000 / 20 purchases = $50 CPA.</td></tr><tr><td><strong>ROAS</strong></td><td>Paid Media</td><td>Return On Ad Spend: attributed revenue divided by ad spend.</td><td>$5,000 attributed revenue / $1,000 spend = 5x ROAS.</td></tr><tr><td><strong>ROI</strong></td><td>Business</td><td>Return on Investment: benefit or return compared with investment, using a defined calculation.</td><td>A campaign&#x27;s ROI may include revenue and costs.</td></tr><tr><td><strong>UTM</strong></td><td>Analytics</td><td>A set of URL parameters used to identify campaign source, medium, campaign, and content in analytics.</td><td>A link can include utm_source=instagram.</td></tr><tr><td><strong>Attribution</strong></td><td>Analytics</td><td>The method used to assign credit for a conversion to one or more marketing touchpoints.</td><td>A purchase might be credited to a paid ad under one model and to organic search under another.</td></tr><tr><td><strong>Content Pillar</strong></td><td>Strategy</td><td>A repeatable topic area a brand consistently publishes about.</td><td>Education, customer stories, and product use can be content pillars.</td></tr><tr><td><strong>Hook</strong></td><td>Content</td><td>The opening element that establishes relevance, curiosity, or a reason to continue.</td><td>A tutorial may begin with the problem it solves.</td></tr><tr><td><strong>CTA</strong></td><td>Content</td><td>Call to Action: the action you want the audience to take.</td><td>Save this guide, visit the site, or send a message are CTAs.</td></tr><tr><td><strong>UGC</strong></td><td>Creator Marketing</td><td>User-Generated Content: content made by customers or community members rather than the brand itself.</td><td>A customer posts a video using a product.</td></tr><tr><td><strong>Creator</strong></td><td>Creator Economy</td><td>A person who regularly creates public content and builds an audience.</td><td>A creator may work across several platforms.</td></tr><tr><td><strong>Influencer</strong></td><td>Creator Marketing</td><td>A person whose audience relationship can influence awareness, consideration, or action.</td><td>A niche creator can influence a specialized audience.</td></tr><tr><td><strong>Brand Deal</strong></td><td>Creator Marketing</td><td>A commercial agreement in which a creator promotes or produces content for a brand.</td><td>A creator may deliver two videos and three Stories for a fee.</td></tr><tr><td><strong>Affiliate</strong></td><td>Monetization</td><td>A person or partner who earns a commission from tracked sales or actions generated through their referral.</td><td>A creator earns commission through a tracked product link.</td></tr><tr><td><strong>Sponsorship</strong></td><td>Monetization</td><td>A paid commercial relationship supporting or integrating a brand into content.</td><td>A business pays a creator to feature a product.</td></tr><tr><td><strong>Monetization</strong></td><td>Business</td><td>Turning audience attention or content activity into revenue.</td><td>Ads, subscriptions, sponsorships, affiliates, products, and services can monetize an audience.</td></tr><tr><td><strong>Eligibility</strong></td><td>Platform Programs</td><td>The conditions a creator/account must meet to enter a platform program or use a feature.</td><td>A platform may have age, region, policy, activity, or account requirements.</td></tr><tr><td><strong>Community Guidelines</strong></td><td>Policy</td><td>Platform rules describing prohibited or restricted content and behavior.</td><td>TikTok, YouTube, and LinkedIn publish their own community rules.</td></tr><tr><td><strong>Monetization Policy</strong></td><td>Policy</td><td>Rules determining whether content/account activity can earn under a platform monetization program.</td><td>A post can be allowed on a platform but still not be monetizable.</td></tr><tr><td><strong>Advertiser-Friendly</strong></td><td>Policy</td><td>Content standards designed to determine what content can safely receive advertising under a platform&#x27;s ad rules.</td><td>A platform may allow a topic but limit ad eligibility.</td></tr><tr><td><strong>Copyright</strong></td><td>Legal/IP</td><td>Legal rights governing original creative works such as music, video, writing, and images.</td><td>Uploading a copyrighted song without permission can create a rights issue.</td></tr><tr><td><strong>Trademark</strong></td><td>Legal/IP</td><td>A protected brand identifier such as a name, logo, or symbol, subject to applicable law.</td><td>Using a competitor&#x27;s logo deceptively may raise trademark concerns.</td></tr><tr><td><strong>Fair Use</strong></td><td>Legal/IP</td><td>A legal doctrine in some jurisdictions that can permit certain uses of copyrighted material under specific circumstances.</td><td>Commentary or criticism can sometimes qualify, but it is fact-specific.</td></tr><tr><td><strong>Disclosure</strong></td><td>Compliance</td><td>A clear statement that reveals a material commercial relationship or other required relationship.</td><td>A sponsored post may need an advertising disclosure.</td></tr><tr><td><strong>Native Content</strong></td><td>Strategy</td><td>Content adapted specifically to the behavior, format, language, and expectations of a platform.</td><td>A TikTok video and LinkedIn post may share an idea but not the same execution.</td></tr><tr><td><strong>Repurposing</strong></td><td>Operations</td><td>Adapting one source idea or asset into multiple useful formats.</td><td>A webinar becomes a YouTube video, Reels, Shorts, and LinkedIn posts.</td></tr><tr><td><strong>Cross-Posting</strong></td><td>Operations</td><td>Publishing the same or similar content across multiple platforms.</td><td>A brand may cross-post a campaign asset.</td></tr><tr><td><strong>Backlog</strong></td><td>Operations</td><td>A collection of work not yet completed or scheduled.</td><td>An inherited content backlog may contain 100 old drafts.</td></tr><tr><td><strong>Content Calendar</strong></td><td>Operations</td><td>A schedule showing what will be published, where, when, and by whom.</td><td>A 30-day calendar maps platform, format, topic, owner, and status.</td></tr><tr><td><strong>Content Brief</strong></td><td>Production</td><td>A document specifying the purpose, audience, message, format, CTA, creative direction, and constraints for an asset.</td><td>A designer receives a creative brief before production.</td></tr><tr><td><strong>QA</strong></td><td>Operations</td><td>Quality Assurance: checking work for correctness, completeness, compliance, and presentation.</td><td>QA checks captions, links, claims, crops, and account selection.</td></tr><tr><td><strong>SOP</strong></td><td>Operations</td><td>Standard Operating Procedure: documented recurring process steps.</td><td>A social publishing SOP lists preparation, QA, approval, and publishing.</td></tr><tr><td><strong>Escalation</strong></td><td>Operations</td><td>Moving an issue to someone with the needed authority or expertise.</td><td>A safety complaint may require immediate escalation.</td></tr><tr><td><strong>Crisis</strong></td><td>Risk</td><td>A high-risk event that can escalate public, operational, legal, safety, or reputational consequences.</td><td>A serious product complaint goes viral and attracts media attention.</td></tr><tr><td><strong>Social Listening</strong></td><td>Research</td><td>Systematically monitoring online conversations, keywords, mentions, and audience feedback.</td><td>Monitor brand mentions and recurring customer questions.</td></tr><tr><td><strong>Sentiment</strong></td><td>Analytics</td><td>An interpretation of whether conversation is positive, negative, neutral, mixed, or otherwise categorized.</td><td>A launch may generate mixed sentiment.</td></tr><tr><td><strong>Social Proof</strong></td><td>Marketing</td><td>Evidence from other people that can increase trust, such as reviews, testimonials, or customer examples.</td><td>Customer videos can serve as social proof.</td></tr><tr><td><strong>Evergreen</strong></td><td>Content</td><td>Content intended to remain useful for a long time rather than depend on a short-lived event.</td><td>A basic tutorial can be evergreen.</td></tr><tr><td><strong>Trend</strong></td><td>Culture/Content</td><td>A topic, format, phrase, event, sound, behavior, or conversation pattern gaining attention.</td><td>A sudden rise in searches can indicate a trend.</td></tr><tr><td><strong>Algorithm</strong></td><td>Platform</td><td>A system used to rank, recommend, or distribute content according to platform-defined signals.</td><td>A feed algorithm determines which posts a user sees.</td></tr><tr><td><strong>Discovery</strong></td><td>Distribution</td><td>The process by which new people encounter content or accounts.</td><td>Search, recommendations, Explore, For You, and shares can enable discovery.</td></tr><tr><td><strong>Virality</strong></td><td>Distribution</td><td>Rapid, unusually broad spread of content through sharing and recommendation.</td><td>A video can go viral due to strong sharing.</td></tr><tr><td><strong>Shadow Ban</strong></td><td>Platform Myth/Term</td><td>A commonly used phrase for reduced visibility that creators attribute to hidden platform action.</td><td>Creators may use the phrase when reach falls.</td></tr><tr><td><strong>Reach Frequency</strong></td><td>Analytics</td><td>Frequency describes how many times a person is exposed to content relative to unique reach.</td><td>Paid media teams may monitor frequency to manage repeated exposure.</td></tr><tr><td><strong>Engagement Bait</strong></td><td>Policy</td><td>Content designed to manipulate users into artificial interactions rather than meaningful engagement.</td><td>&#x27;Like this ten times to unlock...&#x27; may be engagement bait.</td></tr><tr><td><strong>Spam</strong></td><td>Policy</td><td>Unwanted, repetitive, deceptive, irrelevant, or abusive content or activity.</td><td>Repeated unsolicited promotional comments can be spam.</td></tr><tr><td><strong>Account Standing</strong></td><td>Policy</td><td>The current compliance status of an account under platform rules.</td><td>A platform may display warnings, restrictions, or other account-status information.</td></tr><tr><td><strong>Strike</strong></td><td>Policy</td><td>A formal enforcement record or penalty for certain platform policy violations.</td><td>YouTube uses Community Guidelines strikes.</td></tr><tr><td><strong>Appeal</strong></td><td>Policy</td><td>A request asking a platform to review a removal, restriction, or enforcement decision.</td><td>A creator can appeal an eligible YouTube decision.</td></tr><tr><td><strong>Original Content</strong></td><td>Creator Economy</td><td>Content created by the account or transformed with meaningful original value according to a platform&#x27;s definition.</td><td>Original commentary can add substantial value to source material.</td></tr><tr><td><strong>Reused Content</strong></td><td>Monetization</td><td>Content republished or repurposed from existing material with insufficient original value under a platform&#x27;s rules.</td><td>A channel made of copied clips may have monetization problems.</td></tr><tr><td><strong>Watch-Time Retention</strong></td><td>Video</td><td>The share/pattern of viewers remaining across a video&#x27;s timeline.</td><td>A steep drop after five seconds signals a possible opening problem.</td></tr><tr><td><strong>Average View Duration</strong></td><td>Video</td><td>Average amount of time viewers watch a video.</td><td>A 60-second video with 45 seconds average view duration has strong average consumption.</td></tr><tr><td><strong>Completion Rate</strong></td><td>Video</td><td>The percentage of viewers who reach a defined completion point.</td><td>Short videos often use completion as a diagnostic.</td></tr><tr><td><strong>Community Notes</strong></td><td>X</td><td>A feature used to add context to posts on X under its current system.</td><td>A post with a helpful Community Note can have monetization implications under X&#x27;s Original Content Rewards rules.</td></tr><tr><td><strong>Original Content Rewards</strong></td><td>X</td><td>X&#x27;s current creator reward program introduced as the replacement for Creator Revenue Sharing in 2026.</td><td>Eligibility and payouts are governed by current X rules and program terms.</td></tr><tr><td><strong>Creator Revenue Sharing</strong></td><td>X</td><td>X&#x27;s former creator payout program that was retired September 7, 2026.</td><td>Existing participants were transitioned toward the new program.</td></tr><tr><td><strong>Snap Star</strong></td><td>Snapchat</td><td>A verification/status concept used by Snapchat for notable creators and relevant creator programs.</td><td>Snapchat&#x27;s monetization program eligibility currently references Snap Star status.</td></tr><tr><td><strong>Spotlight</strong></td><td>Snapchat</td><td>Snapchat&#x27;s discovery surface for short-form vertical video.</td><td>Eligible monetization can include ads associated with Spotlight under current Snapchat programs.</td></tr><tr><td><strong>Public Story</strong></td><td>Snapchat</td><td>A public Story format that can be discoverable and is distinct from a private story.</td><td>Snapchat&#x27;s monetization program can place ads between Snaps in Public Stories.</td></tr><tr><td><strong>Pinterest Trends</strong></td><td>Pinterest</td><td>A Pinterest tool for seeing popular searches/topics in a region and using them for content discovery.</td><td>A brand can use Pinterest Trends to identify relevant topics.</td></tr><tr><td><strong>Paid Partnership</strong></td><td>Pinterest</td><td>A Pinterest tool/labeling mechanism for creator-brand commercial relationships.</td><td>A creator can add a paid partnership label to a Pin under Pinterest&#x27;s current process.</td></tr><tr><td><strong>Newsletter</strong></td><td>LinkedIn</td><td>A series of regularly published articles that subscribers can receive notifications about.</td><td>A professional creator can publish a recurring LinkedIn newsletter.</td></tr><tr><td><strong>Meta Business Suite</strong></td><td>Meta</td><td>Meta&#x27;s business-management environment for tasks such as content publishing, messages, and insights across supported Meta assets.</td><td>A manager can organize Facebook and Instagram workflows in one place.</td></tr><tr><td><strong>Business Portfolio</strong></td><td>Meta</td><td>A Meta business container used to organize business assets and people permissions.</td><td>A business may manage Pages, Instagram accounts, ad assets, and people through its business setup.</td></tr><tr><td><strong>Ad Account</strong></td><td>Paid Media</td><td>An account that holds advertising campaigns, payment, spending, and ad-related data.</td><td>A company can have separate ad accounts by entity or brand.</td></tr><tr><td><strong>Pixel / Dataset</strong></td><td>Measurement</td><td>Meta measurement concepts used to capture signals from websites/apps or connected systems for advertising and analytics.</td><td>Conversion signals can inform campaign reporting and optimization.</td></tr><tr><td><strong>Lookalike Audience</strong></td><td>Paid Media</td><td>An audience created by a platform to resemble a source audience based on platform signals.</td><td>A brand may build a prospecting audience from existing customers.</td></tr><tr><td><strong>Custom Audience</strong></td><td>Paid Media</td><td>An audience built from permitted data or platform interactions for advertising purposes.</td><td>A business may use website visitors or customer lists if allowed.</td></tr><tr><td><strong>CPM</strong></td><td>Paid Media</td><td>Cost per thousand ad impressions.</td><td>$10 CPM means $10 per 1,000 impressions under the report definition.</td></tr><tr><td><strong>CPC</strong></td><td>Paid Media</td><td>Cost per click.</td><td>$1 CPC means an average of $1 per recorded click.</td></tr><tr><td><strong>Learning Phase</strong></td><td>Paid Media</td><td>A period in which an ad system gathers data and adjusts delivery/optimization.</td><td>Campaign performance may be less stable while enough data is collected.</td></tr><tr><td><strong>Creative Fatigue</strong></td><td>Paid Media</td><td>A decline in performance when an audience has seen an ad or creative too often or the message stops resonating.</td><td>A once-strong ad may see rising frequency and falling CTR.</td></tr><tr><td><strong>Content Governance</strong></td><td>Operations</td><td>The rules, roles, approvals, and controls that keep content consistent and compliant.</td><td>A governance system states who can publish, who approves claims, and where final assets live.</td></tr><tr><td><strong>Source of Truth</strong></td><td>Operations</td><td>The authoritative place where current information should live.</td><td>The approved content calendar can be the source of truth for publishing status.</td></tr><tr><td><strong>Human-in-the-Loop</strong></td><td>Automation</td><td>A workflow in which a person reviews or approves an automated/AI step before consequential action.</td><td>AI drafts a crisis response; a human approves before publication.</td></tr><tr><td><strong>Webhook</strong></td><td>Automation</td><td>A method for one system to send an HTTP request to another when an event occurs.</td><td>An approved content record can trigger a webhook to an automation platform.</td></tr><tr><td><strong>API</strong></td><td>Technology</td><td>Application Programming Interface: a structured way for software systems to interact.</td><td>A social tool may use an API to schedule or retrieve data where permitted.</td></tr><tr><td><strong>Rate Limit</strong></td><td>Technology</td><td>A limit on how many requests a system will accept in a period.</td><td>An API may reject excessive requests.</td></tr><tr><td><strong>Zapier</strong></td><td>Automation</td><td>A platform used to connect apps through triggers and actions.</td><td>A form submission can create a task in Notion.</td></tr><tr><td><strong>Make</strong></td><td>Automation</td><td>A visual automation platform used to build multi-step scenarios across connected apps.</td><td>A scenario can branch based on a content approval status.</td></tr><tr><td><strong>Notion</strong></td><td>Technology</td><td>A workspace tool used for pages, databases, documentation, and coordination.</td><td>A social team can build a content command center in Notion.</td></tr><tr><td><strong>Content ID</strong></td><td>YouTube</td><td>A YouTube system that can identify matching copyrighted material and apply rights-holder policies.</td><td>A music match can trigger a rights action.</td></tr><tr><td><strong>Copyright Claim</strong></td><td>YouTube</td><td>A rights action or Content ID claim affecting a video under YouTube&#x27;s copyright system.</td><td>A claim can monetize, block, or track according to the rights holder&#x27;s policy.</td></tr><tr><td><strong>Copyright Strike</strong></td><td>YouTube</td><td>A formal copyright enforcement action following a valid copyright removal request.</td><td>YouTube distinguishes copyright strikes from Community Guidelines strikes.</td></tr><tr><td><strong>Community Guidelines Strike</strong></td><td>YouTube</td><td>A strike issued for certain violations of YouTube Community Guidelines.</td><td>YouTube documents first, second, and third strike consequences.</td></tr><tr><td><strong>YPP</strong></td><td>YouTube</td><td>YouTube Partner Program: the program providing access to certain monetization features and creator resources to eligible channels.</td><td>A creator applies for YPP after meeting current requirements.</td></tr><tr><td><strong>AdSense for YouTube</strong></td><td>YouTube</td><td>Google&#x27;s payment system used for eligible YouTube monetization payouts.</td><td>YPP creators use AdSense for YouTube to get paid for monetization.</td></tr><tr><td><strong>Creator Partnerships</strong></td><td>YouTube</td><td>YouTube&#x27;s creator-brand partnership feature available to eligible creators in supported regions.</td><td>Eligible creators can use creator-brand collaboration tools.</td></tr><tr><td><strong>Content Moderation</strong></td><td>Community</td><td>Reviewing, filtering, responding to, or escalating user-generated interactions.</td><td>A brand moderates comments and reports violating content.</td></tr><tr><td><strong>Brand Safety</strong></td><td>Risk</td><td>Processes that reduce the risk of a brand appearing next to harmful, inappropriate, or policy-sensitive content.</td><td>Paid campaigns may use placement controls for brand safety.</td></tr><tr><td><strong>Social Proof</strong></td><td>Marketing</td><td>Evidence from customers or community members that supports trust.</td><td>Reviews and testimonials are social proof.</td></tr><tr><td><strong>Case Study</strong></td><td>Content</td><td>A structured story showing a problem, approach, and result.</td><td>A customer case study can become a video and carousel.</td></tr><tr><td><strong>Lead Magnet</strong></td><td>Marketing</td><td>A useful resource offered in exchange for contact information or another desired action.</td><td>A checklist can be a lead magnet.</td></tr><tr><td><strong>Landing Page</strong></td><td>Web/Conversion</td><td>A web page designed around a specific campaign or conversion goal.</td><td>A paid social ad may send traffic to a dedicated landing page.</td></tr><tr><td><strong>Community Manager</strong></td><td>Role</td><td>A role focused on audience interaction, moderation, feedback, and relationships.</td><td>A community manager may own comments and DMs.</td></tr><tr><td><strong>Social Listening Tool</strong></td><td>Technology</td><td>Software used to monitor mentions, keywords, conversations, and sentiment.</td><td>A tool can alert the team when a brand is mentioned.</td></tr><tr><td><strong>Content Audit</strong></td><td>Operations</td><td>A systematic review of existing content to assess quality, performance, relevance, rights, and next action.</td><td>An inherited library can be audited into keep, update, repurpose, archive, or delete categories.</td></tr><tr><td><strong>Policy Watchlist</strong></td><td>Governance</td><td>A tracker of platform policies and updates relevant to the social operation.</td><td>The manager records last-checked date and actions required.</td></tr><tr><td><strong>Monetization Readiness</strong></td><td>Monetization</td><td>An assessment of whether an account appears operationally and policy-ready to pursue a platform or commercial revenue method.</td><td>Review account standing, originality, audience, region, payment setup, and program-specific criteria.</td></tr><tr><td><strong>Audience Quality</strong></td><td>Analytics</td><td>The degree to which an audience matches the intended customer or community rather than merely being large.</td><td>A smaller highly relevant audience can be valuable.</td></tr><tr><td><strong>Recommendation System</strong></td><td>Platforms</td><td>A system that selects and ranks content for a user based on signals, context, eligibility, and predicted relevance or satisfaction.</td><td>TikTok, YouTube, and other platforms describe personalized recommendation systems that use different signal categories.</td></tr></tbody></table></div></div></section>
+<section id="systems" class="tab hidden"><div class="card"><h2>Social Media Command Center</h2><p>Build one operating layer without forcing every tool to become the source of truth for everything.</p><h3>Recommended Architecture</h3><div class="callout"><strong>Notion / PM system</strong> → content database, campaign database, briefs, approvals, SOPs, policy watchlist, meeting notes, learning log<br><strong>Native platforms / publishing tools</strong> → publishing, platform-specific settings, account health, platform analytics<br><strong>Drive / OneDrive</strong> → master creative files and documents<br><strong>GA4 / website analytics</strong> → web behavior and conversions<br><strong>Ads Manager</strong> → paid campaign setup and paid metrics<br><strong>Zapier / Make</strong> → controlled movement of information between tools<br><strong>AI tools</strong> → supervised drafting, classification, ideation, summarization, analysis</div><h3>Automation Blueprints</h3><p><strong>Content intake:</strong> Form → Content database → auto-tag → assign owner → deadline → brief.</p><p><strong>Approval:</strong> Status changes to Ready for Review → reviewer notified → approved/revision → publisher task.</p><p><strong>Publishing log:</strong> Approved content → publishing task → URL captured → status Published → reporting record created.</p><p><strong>Analytics:</strong> Weekly input → dashboard update → anomaly flag → human analysis → insight → experiment backlog.</p><p><strong>Community:</strong> Comment/DM queue → category → priority → response → escalation if required → insight captured.</p><p><strong>Policy watch:</strong> Scheduled review reminder → open official policy pages → compare changes → document update → team notification → SOP update.</p><h3>Automation Safety</h3><p>Automate repetitive low-risk coordination. Keep humans in the loop for crisis communications, sensitive replies, external publication, high-impact claims, legal matters, copyright decisions, and account permissions. Test with dummy data. Log actions. Build exception handling.</p><h3>Notion Mastery Challenge</h3><p>Create databases for Content, Platforms, Campaigns, Assets, Partners, Analytics, Policy Watchlist, and Learnings. Build views for Ideas, In Production, Awaiting Approval, Scheduled, Published, Repurpose, Overdue, and Policy Review.</p></div></section>
+
+<section id="seoauto" class="tab hidden">
+<div class="card">
+<h2>SEO + Automation Mastery Lab</h2>
+<p>This lab connects social media management to search visibility, website discovery, reporting, and automation. The goal is not to turn you into a full-time developer. It is to make you a Social Media Manager who understands the search and systems layer well enough to operate, brief specialists, and build reliable workflows.</div>
+
+<div class="card">
+<h2>Part A — SEO Lessons</h2>
+
+<article class="lesson">
+<div class="lesson-num">SEO 01</div><h3>What SEO Is and How Search Works</h3>
+<h4>📘 Teaching</h4><p>Search Engine Optimization (SEO) is the practice of making content easier for search engines to discover, crawl, understand, and appropriately surface. Google describes Search Essentials as the baseline technical requirements, spam policies, and key best practices for Search. SEO can improve visibility, but no legitimate SEO process can guarantee a first-place ranking.</p>
+<h4>💼 Manager Scenario</h4><p>A social campaign sends thousands of people to a website, but the pages are hard to find in search. You need enough SEO knowledge to identify whether the problem is content, site structure, technical accessibility, or measurement.</p>
+<h4>✍️ Practice</h4><p>Explain SEO to someone who has never heard the term. Then draw: user query → search result → click → webpage → desired business action.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can explain SEO as a system for helping the right people discover and understand useful content.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">SEO 02</div><h3>Search Intent and Keyword Research</h3>
+<h4>📘 Teaching</h4><p>Search intent is the purpose behind a query: learning, finding a specific site or brand, comparing options, or taking an action. Keyword research is the process of understanding the language people use to find solutions. Good SEO starts with the problem and intent, not a list of random high-volume terms.</p>
+<h4>💼 Manager Scenario</h4><p>'How to make cassava cake' and 'buy cassava cake Tacloban' represent different intents. One suggests learning; the other suggests purchase intent.</p>
+<h4>✍️ Practice</h4><p>Create a 30-keyword sheet with query, intent, audience stage, content type, business value, and priority.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can choose content topics based on search intent rather than guessing what sounds popular.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">SEO 03</div><h3>On-Page SEO: Titles, Headings, URLs, Links, and Snippets</h3>
+<h4>📘 Teaching</h4><p>On-page SEO makes a page understandable to users and search systems. Learn how to create accurate titles, descriptive meta descriptions, clear headings, useful internal links, descriptive link text, readable URLs, and focused content. Google advises writing people-first content and placing useful words in prominent, descriptive locations.</p>
+<h4>💼 Manager Scenario</h4><p>A page called 'Our Services' competes with hundreds of vague pages. A more specific, accurate title and structure can communicate the page topic much better.</p>
+<h4>✍️ Practice</h4><p>Rewrite five fictional pages with better title tags, headings, URL slugs, opening copy, internal links, and meta descriptions.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can improve search clarity without keyword stuffing.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">SEO 04</div><h3>Technical SEO: Crawl, Index, Robots, Sitemap, Canonical</h3>
+<h4>📘 Teaching</h4><p>Technical SEO covers whether search engines can access and understand pages. Learn crawling, indexing, robots.txt, noindex, XML sitemaps, canonical URLs, redirects, status codes, mobile accessibility, performance, and basic rendering concepts. You do not need to be the developer, but you should recognize common failure modes.</p>
+<h4>💼 Manager Scenario</h4><p>A campaign landing page receives traffic from social but does not appear in Google. The page may have an indexing directive, blocked crawling, poor links, or another technical issue.</p>
+<h4>✍️ Practice</h4><p>Create a technical SEO checklist and mark which issues you can fix, which require a developer, and which require an SEO specialist.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can diagnose basic technical SEO problems and escalate them intelligently.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">SEO 05</div><h3>Search Console and SEO Reporting</h3>
+<h4>📘 Teaching</h4><p>Google Search Console helps site owners monitor performance in Google Search and understand whether Google can index their site. Learn clicks, impressions, CTR, average position, queries, pages, URL inspection, indexing reports, and performance trends. Search Console is a measurement and diagnostic tool; it is not a ranking guarantee.</p>
+<h4>💼 Manager Scenario</h4><p>Impressions rise but clicks remain flat. You investigate whether the search terms are changing, whether titles and snippets need improvement, or whether the content is attracting the wrong intent.</p>
+<h4>✍️ Practice</h4><p>Design a weekly Search Console report with five metrics, three observations, two hypotheses, and one action.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can turn search data into a practical content or website action plan.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">SEO 06</div><h3>People-First Content, Originality, and Spam</h3>
+<h4>📘 Teaching</h4><p>Durable SEO content should be useful, reliable, well-organized, original, and written for people. Google Search Essentials also identifies spam policies and tactics that can lead to lower ranking or omission. Avoid tactics such as keyword stuffing, deceptive redirects, and scaled low-value production intended primarily to manipulate rankings.</p>
+<h4>💼 Manager Scenario</h4><p>An AI tool can generate 100 nearly identical articles, but publishing volume without unique value may create a large library that does not help users and can create search-quality risk.</p>
+<h4>✍️ Practice</h4><p>Audit 15 content ideas for usefulness, originality, first-hand value, evidence, search intent, and spam risk.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can separate scalable content production from search manipulation.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">SEO 07</div><h3>Internal Linking and Site Architecture</h3>
+<h4>📘 Teaching</h4><p>Internal links help users and crawlers discover related pages. Information architecture organizes content into logical topics and pathways. Your job is to build clear relationships between cornerstone pages, supporting content, product/service pages, and conversion pages.</p>
+<h4>💼 Manager Scenario</h4><p>A blog has hundreds of articles but visitors cannot easily reach product pages. A stronger linking structure can connect education to commercial intent.</p>
+<h4>✍️ Practice</h4><p>Draw a site map for a fictional business with homepage, category pages, educational content, product/service pages, and contact/conversion pages.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design a content structure that supports both discovery and navigation.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">SEO 08</div><h3>Image, Video, Local, and Social Search</h3>
+<h4>📘 Teaching</h4><p>Modern search is not only ten blue links. People discover images, videos, local businesses, maps, and creator content through search surfaces. Social platforms also behave like search engines in their own environments. Make topics, entities, captions, titles, descriptions, and visual context clear and useful.</p>
+<h4>💼 Manager Scenario</h4><p>A local business wants to be discovered when people search for its product and location. The social manager needs to align profile information, website content, visual assets, and local intent.</p>
+<h4>✍️ Practice</h4><p>Create a local-search content plan with website pages, social profiles, image/video optimization, review strategy, and measurement.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You understand how SEO, local discovery, and social search can work together.</p></div>
+</article>
+
+<h3>Official SEO Study Resources</h3>
+<ul>
+<li><a href="https://developers.google.com/search/docs/essentials" target="_blank" rel="noopener">Google Search Essentials</a></li>
+<li><a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener">Google SEO Starter Guide</a></li>
+<li><a href="https://support.google.com/webmasters/answer/10267942?hl=en" target="_blank" rel="noopener">Google Search Console — Getting Started</a></li>
+<li><a href="https://developers.google.com/search/docs/fundamentals/how-search-works" target="_blank" rel="noopener">How Google Search Works</a></li>
+</ul>
+</div>
+
+<div class="card">
+<h2>Part B — Automation Mastery</h2>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 01</div><h3>What Should Be Automated?</h3>
+<h4>📘 Teaching</h4><p>Automate repetitive, predictable, low-risk coordination. Keep human control over strategy, crisis responses, sensitive communications, legal matters, high-impact public publishing, and decisions with material consequences.</p>
+<h4>💼 Manager Scenario</h4><p>A new content idea can automatically create a Notion record and assign an owner. A crisis statement should not automatically publish because the workflow requires judgment and authorization.</p>
+<h4>✍️ Practice</h4><p>List 30 Social Media Manager tasks and classify each as Automate, AI-Assisted, or Human-Controlled. Explain five decisions.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can distinguish efficiency opportunities from unsafe automation.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 02</div><h3>Workflow Design: Trigger → Data → Condition → Action → QA → Exception</h3>
+<h4>📘 Teaching</h4><p>A reliable workflow starts by defining what starts it, what information is needed, what conditions must be true, what the system does, when a human reviews the result, what happens if something fails, and how the action is logged. This structure applies whether you use native tools, Zapier, Make, or APIs.</p>
+<h4>💼 Manager Scenario</h4><p>When a content record becomes Approved, an automation creates platform-specific tasks. If the creator file is missing, the workflow stops and creates a human-review task rather than publishing a broken asset.</p>
+<h4>✍️ Practice</h4><p>Design five workflows using this seven-stage structure.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design workflows that are clear, testable, and recoverable.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 03</div><h3>Notion as the Social Media Command Center</h3>
+<h4>📘 Teaching</h4><p>Notion can serve as an operating layer for content databases, campaign planning, briefs, approvals, SOPs, policy watchlists, partnerships, and learnings. Its database automations use triggers and actions, and current Notion documentation supports actions such as editing properties, adding pages, notifications, sending Gmail, and webhooks on supported plans.</p>
+<h4>💼 Manager Scenario</h4><p>A Content database has Status, Platform, Campaign, Owner, Due Date, Approval, Rights, Caption, Asset, Published URL, and Performance fields. Views show Ideas, In Production, Awaiting Approval, Scheduled, Published, and Learnings.</p>
+<h4>✍️ Practice</h4><p>Build the database schema on paper first. Then create the same structure in Notion using test data.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design a clean source-of-truth workspace instead of a pile of pages.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 04</div><h3>Zapier and Make</h3>
+<h4>📘 Teaching</h4><p>Zapier uses trigger-and-action workflows called Zaps. Make uses scenarios made from modules and can include filters, routers, aggregators, and more complex logic. Both can connect business apps without requiring custom development for every workflow.</p>
+<h4>💼 Manager Scenario</h4><p>A content request form creates a Notion item, posts a notification to the team, and creates a task. A more complex Make scenario can branch based on platform, content type, approval status, or risk level.</p>
+<h4>✍️ Practice</h4><p>Draw one simple Zap and one multi-step Make scenario. Label every trigger, action, filter, and exception.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You understand when a simple workflow is enough and when branching logic is needed.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 05</div><h3>Automation for Content Production</h3>
+<h4>📘 Teaching</h4><p>Automation can move content through intake, briefing, production, approval, scheduling, publishing logs, repurposing, and post-publication reporting. The creative decision remains human-led.</p>
+<h4>💼 Manager Scenario</h4><p>One approved webinar becomes a content project. The automation creates tasks for YouTube, Shorts, Instagram, TikTok, LinkedIn, newsletter, and Pinterest versions with their own deadlines and owners.</p>
+<h4>✍️ Practice</h4><p>Create a source-to-many repurposing workflow with at least eight output assets.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can scale content without losing platform-specific quality control.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 06</div><h3>Automation for Community Management</h3>
+<h4>📘 Teaching</h4><p>Community workflows can categorize comments and DMs, create response tasks, notify the owner, identify urgent categories, and capture audience insights. Automation should not silently answer sensitive issues without a human review policy.</p>
+<h4>💼 Manager Scenario</h4><p>A message containing words associated with safety, legal complaints, refunds, or threats gets routed to the proper team instead of receiving an automatic marketing response.</p>
+<h4>✍️ Practice</h4><p>Create a comment/DM taxonomy and map each category to auto-route, assisted response, or human-only handling.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can automate queue management without automating away judgment.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 07</div><h3>Automation for Analytics and Reporting</h3>
+<h4>📘 Teaching</h4><p>Automate data collection and formatting where the source allows it. Then keep interpretation human-led. A useful reporting workflow can collect inputs, update a dashboard, detect anomalies, create a review task, and preserve an insight log.</p>
+<h4>💼 Manager Scenario</h4><p>Every Monday, the reporting workflow prepares the dashboard. If reach falls beyond the team's defined threshold, it creates an analysis task rather than automatically declaring a problem.</p>
+<h4>✍️ Practice</h4><p>Design a weekly reporting workflow with a metric intake, anomaly flag, human analysis, insight, and experiment backlog.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can automate reporting mechanics while keeping conclusions evidence-based.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 08</div><h3>Webhooks, APIs, Permissions, and Data Safety</h3>
+<h4>📘 Teaching</h4><p>APIs are structured interfaces that let software systems communicate. Webhooks let one system send event information to another. Automation must respect authentication, permissions, rate limits, privacy, and platform terms. Notion currently documents webhook actions using HTTP POST requests, with specific limitations and plan requirements.</p>
+<h4>💼 Manager Scenario</h4><p>You connect a content database to an automation platform. Before using real customer information, you test the webhook with dummy data, confirm permissions, and document what data is sent.</p>
+<h4>✍️ Practice</h4><p>Draw a data-flow diagram for a webhook automation and mark where sensitive information could leak.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can explain how data moves between systems and where security controls belong.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 09</div><h3>AI-Assisted Social Media Operations</h3>
+<h4>📘 Teaching</h4><p>AI can assist with ideation, captions, scripts, content repurposing, comment classification, research summaries, reporting drafts, and trend synthesis. Human review remains required for facts, claims, rights, brand safety, policy compliance, originality, and sensitive communication.</p>
+<h4>💼 Manager Scenario</h4><p>AI produces 30 caption drafts overnight. The manager filters them against brand voice, factual accuracy, audience fit, platform norms, commercial disclosure, and content originality before anything is scheduled.</p>
+<h4>✍️ Practice</h4><p>Create an AI prompt pack for six social tasks and a review checklist for every output.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You use AI as a supervised assistant, not an unchecked publisher.</p></div>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">AUTO 10</div><h3>Automation QA, Logging, and Disaster Recovery</h3>
+<h4>📘 Teaching</h4><p>Before an automation goes live, test missing fields, wrong account selection, duplicate records, failed connections, incorrect dates, and missing approvals. Keep logs and a manual fallback. Important workflows should fail safely.</p>
+<h4>💼 Manager Scenario</h4><p>A platform connection breaks. Instead of publishing blindly, the workflow stops, marks the item Needs Manual Action, logs the error, and alerts the owner.</p>
+<h4>✍️ Practice</h4><p>Create five test cases and a recovery checklist for your content publishing automation.</p>
+<div class="mastery"><h4>🎯 Mastery Standard</h4><p>You can design automations that are maintainable and recoverable.</p></div>
+</article>
+
+<h3>Official Automation Study Resources</h3>
+<ul>
+<li><a href="https://www.notion.com/help/database-automations" target="_blank" rel="noopener">Notion — Database Automations</a></li>
+<li><a href="https://www.notion.com/help/webhook-actions" target="_blank" rel="noopener">Notion — Webhook Actions</a></li>
+<li><a href="https://help.zapier.com/hc/en-us/articles/8496181725453-Learn-key-concepts-in-Zap-workflows" target="_blank" rel="noopener">Zapier — Key Workflow Concepts</a></li>
+<li><a href="https://help.make.com/" target="_blank" rel="noopener">Make — Help Center / Get Started</a></li>
+</ul>
+</div>
+</section>
+
+
+<section id="algorithms" class="tab hidden">
+<div class="card">
+<h2>🧠 Algorithm Lab — Learn How Distribution Systems Work</h2>
+<p>Do not treat an algorithm as a secret formula with one magic trick. A better model is: <strong>eligible content → candidate selection → ranking/recommendation → user feedback → system learning</strong>. Platforms use different signals, surfaces, safety rules, and definitions. Your job as a manager is to understand the system, measure outcomes, and test hypotheses.</p>
+<div class="callout"><strong>Golden rule:</strong> There is no universal “algorithm.” Study the specific surface: Feed, Reels, For You, Search, Shorts, Home, Explore, Stories, LIVE, etc. Study the platform's official documentation, then validate ideas against your own analytics.</div>
+</div>
+
+<div class="card">
+<h2>Algorithm Study Method</h2>
+<div class="stats">
+<div class="stat"><b>1. Surface</b>Which feed, search page, recommendation area, or product?</div>
+<div class="stat"><b>2. Signals</b>What user, content, context, and quality signals are documented?</div>
+<div class="stat"><b>3. Eligibility</b>What content is excluded, limited, or made ineligible?</div>
+<div class="stat"><b>4. Behavior</b>What do people choose, watch, skip, share, save, click, or reject?</div>
+<div class="stat"><b>5. Measurement</b>Which analytics explain the result?</div>
+<div class="stat"><b>6. Experiment</b>What one meaningful variable will you test next?</div>
+</div>
+</div>
+
+<div class="card">
+<h2>Platform Algorithm Study Guides</h2>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 01 • FACEBOOK</div><h3>Facebook Feed Ranking</h3>
+<h4>📘 Study</h4><p>Facebook has described Feed as personalized. Meta has explained that factors include people's past interactions with people, Pages, and Groups, interactions with particular types of posts, and the popularity of posts shared by accounts they follow. Treat these as documented categories, not a permanent list of fixed weights.</p>
+<h4>🧪 Practice</h4><p>Audit 20 Facebook posts. Record format, topic, audience, reach, reactions, comments, shares, clicks, and whether the content was from a Page, Group, or person. Form three hypotheses about what your audience responds to.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You can explain Feed distribution without claiming to know a secret ranking formula.</p></div>
+<p><a href="https://about.fb.com/news/2019/03/why-am-i-seeing-this/" target="_blank" rel="noopener">Read Meta's “Why am I seeing this?” explanation</a></p>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 02 • INSTAGRAM</div><h3>Instagram Recommendation Thinking</h3>
+<h4>📘 Study</h4><p>Instagram has multiple recommendation surfaces and publishes guidance about recommendation eligibility and content discovery. Study each surface separately rather than searching for one “Instagram algorithm.” Pay attention to whether content is eligible for recommendation, then study the performance of your own Reels, Feed posts, Stories, and profile actions.</p>
+<h4>🧪 Practice</h4><p>For 30 Instagram posts, record reach from followers versus non-followers where available, views, shares, saves, watch behavior, profile activity, and content type. Identify three content patterns worth testing.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You understand that ranking and recommendation depend on context and surface, not one universal trick.</p></div>
+<p><a href="https://about.instagram.com/blog/announcements/reels-algorithm-control" target="_blank" rel="noopener">Read Instagram's official recommendation-related guidance</a></p>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 03 • TIKTOK</div><h3>TikTok Recommendation System</h3>
+<h4>📘 Study</h4><p>TikTok currently documents three main factor categories for recommendation: user interactions, content information, and user information. TikTok also explains that the relative weight of factors can change over time and that user interactions such as watching, liking, sharing, commenting, and skipping can influence recommendations. Search ranking also considers how well content matches the query along with other content information.</p>
+<h4>🧪 Practice</h4><p>Create five versions of the same educational idea using different openings. Track early audience response, watch behavior, shares, and search relevance rather than treating views as the only outcome.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You can discuss TikTok distribution using documented signal categories and testing—not “hack” folklore.</p></div>
+<p><a href="https://support.tiktok.com/en/using-tiktok/exploring-videos/how-tiktok-recommends-content" target="_blank" rel="noopener">Read TikTok's recommendation-system explanation</a></p>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 04 • YOUTUBE</div><h3>YouTube Recommendation System</h3>
+<h4>📘 Study</h4><p>YouTube explains that recommendations are personalized and span surfaces such as Home, Up Next, Shorts, destination pages, and channel pages. Its current creator guidance groups content-performance signals into appeal, engagement, and satisfaction. Study these separately from search and from subscriber notifications.</p>
+<h4>🧪 Practice</h4><p>Compare five videos by impressions, click-through rate, average view duration, audience retention, traffic source, and satisfaction-related signals available in Studio. Write one hypothesis for each underperforming video.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You can explain how packaging, viewing behavior, and satisfaction interact in recommendations.</p></div>
+<p><a href="https://support.google.com/youtube/answer/16089387?hl=en" target="_blank" rel="noopener">How YouTube recommendations work</a> · <a href="https://support.google.com/youtube/answer/16559650?hl=en" target="_blank" rel="noopener">Content performance for recommendations</a></p>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 05 • LINKEDIN</div><h3>LinkedIn Feed and Professional Relevance</h3>
+<h4>📘 Study</h4><p>LinkedIn's professional environment rewards relevance to a professional audience and meaningful conversation. Study post format, topic relevance, audience fit, dwell/read behavior where available, comments, reposts, profile activity, and Page analytics. Avoid artificial engagement tactics.</p>
+<h4>🧪 Practice</h4><p>Take 15 LinkedIn posts and label: audience, topic, format, opening, proof, CTA, discussion quality, and business relevance. Turn your findings into five testable content hypotheses.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You can build professional content around audience relevance rather than generic engagement bait.</p></div>
+<p><a href="https://www.linkedin.com/help/linkedin/answer/a6801327" target="_blank" rel="noopener">LinkedIn Page admin dashboard</a></p>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 06 • X</div><h3>X Ranking and Conversation</h3>
+<h4>📘 Study</h4><p>X uses ranking and recommendation systems across timelines, trends, conversations, and search. The safest way to study X is to analyze the specific surface and current official documentation rather than assume one formula. Study views, replies, reposts, profile actions, topic relevance, conversation quality, and original content.</p>
+<h4>🧪 Practice</h4><p>Build an original-commentary experiment with 15 posts. Track topic, format, opening line, replies, reposts, views, and profile actions. Compare content that creates conversation with content that only earns passive views.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You can analyze X performance without relying on outdated “growth hacks.”</p></div>
+<p><a href="https://help.x.com/en/resources/glossary" target="_blank" rel="noopener">X official glossary</a></p>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 07 • PINTEREST</div><h3>Pinterest Discovery and Search</h3>
+<h4>📘 Study</h4><p>Pinterest is strongly discovery/search-oriented. Study keyword relevance, visual quality, saves, clicks, topic matching, freshness, boards, and the relationship between Pins and destination pages. Pinterest Analytics can show what paid and organic content resonates.</p>
+<h4>🧪 Practice</h4><p>Create 20 Pins around five search themes. Track impressions, saves, outbound clicks, and top-performing topics.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You design Pins for searchable, useful discovery rather than only follower growth.</p></div>
+<p><a href="https://help.pinterest.com/en/business/article/pinterest-analytics" target="_blank" rel="noopener">Pinterest Analytics</a></p>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 08 • SNAPCHAT</div><h3>Snapchat Content Discovery</h3>
+<h4>📘 Study</h4><p>Study Public Stories, Spotlight, audience behavior, and public-profile insights separately. Snapchat currently provides views, viewers, shares, favorites, clicks, screenshots, average view time, total view time, and average view rate in relevant insights. Use these metrics to understand what holds attention.</p>
+<h4>🧪 Practice</h4><p>Compare 10 public Stories or Spotlight posts and identify which structures produce stronger average view time, shares, or follows.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You can use Snapchat's native insights to evaluate content instead of guessing from raw views.</p></div>
+<p><a href="https://help.snapchat.com/hc/en-us/articles/24892451593108-Viewing-and-Understanding-Analytics" target="_blank" rel="noopener">Snapchat Content Insights</a></p>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 09 • REDDIT</div><h3>Reddit Community Ranking</h3>
+<h4>📘 Study</h4><p>Reddit is community-specific. Ranking and visibility are inseparable from subreddit rules, voting, moderation, and community culture. Study each community's norms before posting. Mod Insights can help moderators understand traffic, membership growth, team health, reports, and removals.</p>
+<h4>🧪 Practice</h4><p>Select three communities. Read their rules, top posts, recurring questions, and moderation patterns. Write a “do / do not / test” sheet for each.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You can participate in Reddit communities without treating them as generic ad feeds.</p></div>
+<p><a href="https://support.reddithelp.com/hc/en-us/articles/15484468824980-Mod-Insights" target="_blank" rel="noopener">Reddit Mod Insights</a></p>
+</article>
+
+<article class="lesson">
+<div class="lesson-num">ALGORITHM 10 • TWITCH</div><h3>Twitch Discovery, Retention, and Live Community</h3>
+<h4>📘 Study</h4><p>On Twitch, live community behavior is central. Study discovery, viewer retention, category choice, stream schedule, chat participation, returning viewers, and post-stream analytics. Twitch Creator Camp teaches creators to use Creator Dashboard analytics to understand discovery and engagement.</p>
+<h4>🧪 Practice</h4><p>Build a post-stream review template covering discovery, average viewers, peak viewers, chat activity, follows, subscriptions where available, and the content moments that created interaction.</p>
+<div class="mastery"><h4>🎯 Mastery</h4><p>You can use live-stream analytics to improve programming and community—not just stream longer.</p></div>
+<p><a href="https://www.twitch.tv/creatorcamp/en/paths/establish-your-brand/channel-analytics/" target="_blank" rel="noopener">Twitch Creator Camp: Analytics</a></p>
+</article>
+</div>
+
+<div class="card">
+<h2>🔬 Algorithm Experiment Notebook</h2>
+<p>For every experiment, record: <strong>surface → hypothesis → audience → content variable → control/comparison → metric → timeframe → result → interpretation → next test.</strong></p>
+<p class="callout"><strong>Never write:</strong> “The algorithm hates my account.”<br><strong>Write:</strong> “Non-follower reach fell 28% over four comparable posts while saves rose 14%; I will test whether topic packaging or audience mismatch explains the shift.”</p>
+</div>
+</section>
+
+
+<section id="suites" class="tab hidden">
+<div class="card">
+<h2>🛠️ Platform Suites — Learn to Navigate the Actual Tools</h2>
+<p>This is your hands-on software lab. The interfaces change over time, so learn the <strong>information architecture</strong> as well as the clicks: where publishing, content libraries, messages, analytics, monetization, permissions, and account health live.</p>
+<div class="callout"><strong>Practice rule:</strong> Open each platform in a test/authorized account. Never experiment with real client publishing, billing, deletion, or permission changes.</div>
+</div>
+
+<div class="card">
+<h2>Meta Business Suite — Facebook + Instagram</h2>
+<p>Meta describes Business Suite as a central place to manage business activities across supported Facebook, Instagram, and Messenger assets. Current Meta guidance also shows content creation from the Home or Content tab, and Meta's creator guidance supports publishing, scheduling, and managing Facebook and Instagram content from Business Suite.</p>
+<h3>Navigation Drill</h3>
+<ol>
+<li>Open <strong>Meta Business Suite</strong> and confirm the correct business/account before touching content.</li>
+<li>Find the <strong>Home</strong> dashboard and identify what needs attention.</li>
+<li>Open <strong>Content</strong>: find published, scheduled, drafts, and available platform views.</li>
+<li>Open <strong>Inbox</strong>: practice sorting comments/messages and identifying escalation categories.</li>
+<li>Open <strong>Insights</strong>: identify content performance and audience information.</li>
+<li>Open the relevant business settings/permissions area and learn who can access what.</li>
+</ol>
+<div class="callout">Meta Business Suite can support content management, messaging, and insights across supported Meta products. Feature availability can depend on the account and current product setup.</div>
+<p><a href="https://www.facebook.com/business/tools/meta-business-suite" target="_blank" rel="noopener">Meta Business Suite</a> · <a href="https://www.facebook.com/business/help/942827662903020" target="_blank" rel="noopener">Create and manage posts in Meta Business Suite</a></p>
+</div>
+
+<div class="card">
+<h2>TikTok Studio</h2>
+<p>TikTok Studio is the creator management environment for creating, managing, and analyzing content. TikTok's current help documentation says it can upload, schedule, manage content, show analytics, manage comments, check monetization performance, and provide growth/inspiration tools. Web access is available at <strong>tiktok.com/tiktokstudio</strong>.</p>
+<h3>Navigation Drill</h3>
+<ol>
+<li>Open TikTok Studio on web or from the TikTok app through Profile → Menu → TikTok Studio.</li>
+<li>Find <strong>Content</strong> and identify drafts, posts, scheduling, and management functions available to the account.</li>
+<li>Open <strong>Analytics</strong> and inspect Overview, Content, Viewers, and Followers.</li>
+<li>Open <strong>Comments</strong> and practice categorizing questions, complaints, spam, and praise.</li>
+<li>Find <strong>Monetization</strong> and note what is actually available to the test account.</li>
+<li>Explore <strong>Trending/Inspiration</strong> and document three content opportunities.</li>
+</ol>
+<p><a href="https://support.tiktok.com/en/using-tiktok/creating-videos/creator-tools-on-tiktok" target="_blank" rel="noopener">TikTok Studio — official guide</a></p>
+</div>
+
+<div class="card">
+<h2>YouTube Studio</h2>
+<p>YouTube Studio is the main operating environment for channel management. Current YouTube documentation places content and analytics in the left navigation, with Analytics including Overview, Content, Reach, Engagement, Audience, Revenue, and Trends; Advanced Mode allows deeper comparisons and exports.</p>
+<h3>Navigation Drill</h3>
+<ol>
+<li>Open <strong>YouTube Studio</strong> and review the dashboard.</li>
+<li>Open <strong>Content</strong>: practice filtering videos, Shorts, Live, and other available formats.</li>
+<li>Open <strong>Analytics</strong>: study Overview, Content, Reach, Engagement, Audience, Revenue, and Trends.</li>
+<li>Open one video's analytics and compare its traffic sources and viewer behavior.</li>
+<li>Open <strong>Advanced Mode</strong> and practice comparing two videos or time periods.</li>
+<li>Inspect <strong>Settings</strong>, channel permissions, and other account controls without making destructive changes.</li>
+</ol>
+<p><a href="https://support.google.com/youtube/answer/9002587?hl=en" target="_blank" rel="noopener">YouTube Analytics</a> · <a href="https://support.google.com/youtube/answer/9717005?hl=en" target="_blank" rel="noopener">Advanced Mode</a></p>
+</div>
+
+<div class="card">
+<h2>LinkedIn Page Admin + Analytics</h2>
+<p>LinkedIn currently provides an Admin View for Pages. Page admins can access recent posts, comments, mentions, reactions, Page information, analytics, and other tools according to their role. LinkedIn's Analytics & tools area also brings together creator analytics and other insights.</p>
+<h3>Navigation Drill</h3>
+<ol>
+<li>From your LinkedIn home page, use the <strong>My Pages</strong> area to open the Page admin view.</li>
+<li>Practice <strong>Manage recent posts</strong> and identify comments, mentions, reposts, and reactions.</li>
+<li>Open <strong>Analytics</strong> and explore Content, Visitors, Followers, Competitors, and Search Appearance where available.</li>
+<li>Practice exporting a Page analytics report without editing the Page.</li>
+<li>Review Page admin roles and understand what each permission allows.</li>
+</ol>
+<p><a href="https://www.linkedin.com/help/linkedin/answer/a546865/access-your-admin-view-on-linkedin-pages?lang=en" target="_blank" rel="noopener">LinkedIn Page Admin View</a> · <a href="https://www.linkedin.com/help/linkedin/answer/a551206" target="_blank" rel="noopener">Export LinkedIn Page analytics</a></p>
+</div>
+
+<div class="card">
+<h2>X — Account Delegation + Media Studio</h2>
+<p>X's current tools include account delegation and Media Studio for media library and analytics. X documents owner, admin, contributor, publisher, analyst, uploader, and other access patterns for certain Media Studio use cases. Learn permissions before you publish.</p>
+<h3>Navigation Drill</h3>
+<ol>
+<li>Learn <strong>delegation</strong>: understand what an owner, admin, and contributor can do before accepting access.</li>
+<li>Open <strong>Media Studio → Library</strong> and practice filtering and reviewing uploaded media.</li>
+<li>Open media analytics and compare views, completion, average watch time, and traffic dimensions where available.</li>
+<li>Review the account's analytics/dashboard and post views.</li>
+<li>Build an account-safety checklist before granting third-party access.</li>
+</ol>
+<p><a href="https://help.x.com/en/using-x/media-studio" target="_blank" rel="noopener">X Media Studio</a> · <a href="https://help.x.com/en/managing-your-account/how-to-use-the-delegate-feature" target="_blank" rel="noopener">X account delegation</a></p>
+</div>
+
+<div class="card">
+<h2>Pinterest Business Hub + Analytics</h2>
+<p>Pinterest business accounts provide access to Business Hub and Pinterest Analytics. Pinterest's current documentation also uses Business Hub as the entry point for campaign creation and reporting.</p>
+<h3>Navigation Drill</h3>
+<ol>
+<li>Open a Pinterest business account and find <strong>Business Hub</strong>.</li>
+<li>Open <strong>Analytics</strong> and inspect Overview, top Pins, boards, filters, and available metrics.</li>
+<li>Find content that earns impressions but weak outbound clicks and formulate a hypothesis.</li>
+<li>Explore the campaign interface without publishing an ad.</li>
+<li>Map the relationship between Pin → destination → conversion.</li>
+</ol>
+<p><a href="https://help.pinterest.com/en/business/article/get-a-business-account" target="_blank" rel="noopener">Pinterest Business Account / Business Hub</a> · <a href="https://help.pinterest.com/en/business/article/pinterest-analytics" target="_blank" rel="noopener">Pinterest Analytics</a></p>
+</div>
+
+<div class="card">
+<h2>Snapchat Public Profile + Insights</h2>
+<p>Snapchat's current Public Profile environment includes an <strong>Insights</strong> area. Official support describes content insights for Stories and Spotlight, including viewers, views, screenshots, swipe-ups, replies, shares, clicks, average view time, and average view rate where applicable.</p>
+<h3>Navigation Drill</h3>
+<ol>
+<li>Open the Public Profile and find <strong>Insights</strong>.</li>
+<li>Inspect <strong>Recent</strong> and <strong>28-Day Summary</strong>.</li>
+<li>Open a Story or Spotlight tile and compare detailed content metrics.</li>
+<li>Open audience information and note what is available for the account.</li>
+<li>Build a weekly Snapchat report using native metrics.</li>
+</ol>
+<p><a href="https://help.snapchat.com/hc/en-us/articles/24892451593108-Viewing-and-Understanding-Analytics" target="_blank" rel="noopener">Snapchat Analytics</a></p>
+</div>
+
+<div class="card">
+<h2>Reddit Mod Tools + Insights</h2>
+<p>Reddit's current Moderation Tools hub is accessed from the <strong>Mod Tools</strong> button when viewing a community you moderate. Reddit documents queues, Mod Mail, scheduled posts/events, restricted users, moderator/member management, and Insights. Mod Insights includes activity, team health, and reports/removals.</p>
+<h3>Navigation Drill</h3>
+<ol>
+<li>Open a community you are authorized to moderate and click <strong>Mod Tools</strong>.</li>
+<li>Inspect the review queues: Needs Review, Reported, Removed, Edited, and Unmoderated.</li>
+<li>Open <strong>Mod Mail</strong> and identify message categories.</li>
+<li>Open <strong>Scheduled Posts and Events</strong> and inspect the workflow.</li>
+<li>Open <strong>Insights</strong> and study traffic, membership growth, moderation activity, reports, and removals.</li>
+</ol>
+<p><a href="https://support.reddithelp.com/hc/en-us/articles/15484384020756-Mod-Insights" target="_blank" rel="noopener">Reddit Mod Insights</a> · <a href="https://support.reddithelp.com/hc/en-us/articles/15484384020756" target="_blank" rel="noopener">Reddit moderation tools overview</a></p>
+</div>
+
+<div class="card">
+<h2>Twitch Creator Dashboard + Stream Manager</h2>
+<p>Twitch Creator Camp teaches the Creator Dashboard and Stream Manager as core creator tools. Twitch also documents analytics in the Creator Dashboard, including overall and viewer/discovery/engagement views.</p>
+<h3>Navigation Drill</h3>
+<ol>
+<li>Open the <strong>Creator Dashboard</strong>.</li>
+<li>Find <strong>Stream Manager</strong> and identify quick actions and live controls.</li>
+<li>Open <strong>Analytics</strong> and inspect overall, discovery, and engagement information.</li>
+<li>Review your stream schedule and channel page organization.</li>
+<li>Create a post-stream review workflow and save it in your operating manual.</li>
+</ol>
+<p><a href="https://www.twitch.tv/creatorcamp/en/paths/" target="_blank" rel="noopener">Twitch Creator Camp</a> · <a href="https://www.twitch.tv/creatorcamp/en/paths/establish-your-brand/channel-analytics/" target="_blank" rel="noopener">Twitch Analytics</a></p>
+</div>
+
+<div class="card">
+<h2>🏆 Suite Navigation Challenge</h2>
+<p>For each platform, produce a one-page cheat sheet with: <strong>How to enter → publishing → drafts → scheduling → messages/comments → analytics → monetization → permissions → policy/account status → export/reporting → official help link.</strong></p>
+<p>Complete the exercise on test or authorized accounts. The interface is expected to evolve; your goal is to learn how to find the right function and verify the current documentation.</p>
+</div>
+</section>
+
+
+<section id="globalcal" class="tab hidden">
+<div class="card"><h2>🌍 Global Content Calendar & Seasonal Strategy</h2>
+<p>This is your annual content-planning engine. It teaches you how to build a social calendar around seasons, global observances, country-specific holidays, cultural moments, commercial events, and your own brand campaigns without turning the feed into a wall of generic holiday posts.</p>
+<div class="callout"><strong>Professional mindset:</strong> “Worldwide” does not mean one universal calendar. It means you know how to build a global master calendar and then localize it by market.</div>
+</div>
+
+<div class="card">
+<h2>🌎 First: Understand the 4 Seasonal Worlds</h2>
+<table><thead><tr><th>Period</th><th>Northern Hemisphere</th><th>Southern Hemisphere</th><th>Tropical/Equatorial</th></tr></thead><tbody>
+<tr><td>Dec–Feb</td><td>Winter</td><td>Summer</td><td>Use local wet/dry or regional climate calendar</td></tr>
+<tr><td>Mar–May</td><td>Spring</td><td>Autumn</td><td>Use local climate and cultural calendar</td></tr>
+<tr><td>Jun–Aug</td><td>Summer</td><td>Winter</td><td>Use local climate and school calendar</td></tr>
+<tr><td>Sep–Nov</td><td>Autumn</td><td>Spring</td><td>Use local climate and school/calendar cycles</td></tr>
+</tbody></table>
+<p class="small">Seasonal creative should be localized. A July “summer essentials” campaign may be logical in Europe or North America but inappropriate in Australia or South Africa.</p>
+</div>
+
+<div class="card">
+
+<h2>🎯 The Global Holiday Content Framework</h2>
+<p>Before adding a holiday to a content calendar, ask six questions:</p>
+<div class="stats">
+<div class="stat"><b>1. Relevance</b>Does this matter to our audience?</div>
+<div class="stat"><b>2. Authenticity</b>Do we have a real reason to participate?</div>
+<div class="stat"><b>3. Geography</b>Which countries actually observe it?</div>
+<div class="stat"><b>4. Timing</b>Is the date fixed, movable, lunar, or locally determined?</div>
+<div class="stat"><b>5. Sensitivity</b>Could the post be disrespectful, trivializing, or overly commercial?</div>
+<div class="stat"><b>6. Objective</b>Is this awareness, community, education, traffic, leads, sales, or retention?</div>
+</div>
+<div class="callout"><strong>Do not create a “holiday dump.”</strong> A professional calendar prioritizes relevant observances, then adds local national and commercial dates for the specific audience. A global brand should never assume one holiday or season fits everyone.</div>
+
+</div>
+
+<div class="card">
+<h2>📅 Month-by-Month Global Strategy</h2>
+<p>These are planning anchors, not a list of every holiday on Earth. Build local layers from country-level official calendars before publishing.</p>
+<div class="lesson-grid">
+    <article class="lesson calendar-month">
+      <div class="lesson-num">JANUARY</div>
+      <h3>Reset • Goals • Fresh Start</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>New Year&#x27;s Day</li><li>Epiphany / Three Kings (observed in some Christian traditions)</li><li>Lunar/New Year planning begins in many markets</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Plan &#x27;new year&#x27; content around a useful reset rather than generic resolutions. Use goal-setting, planning, organization, product refreshes, founder vision, educational series, and &#x27;what&#x27;s coming this year&#x27; content.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern Hemisphere: winter. Southern Hemisphere: summer. Tropical regions may follow wet/dry seasons rather than four-season weather.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Global hook: &#x27;What are you building this year?&#x27; • Educational series • Trend forecasts • New-product teasers • Planning checklists</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">FEBRUARY</div>
+      <h3>Love • Culture • Community • Short-Form Energy</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>Valentine&#x27;s Day (widely observed, with local variations)</li><li>Lunar New Year / Spring Festival (date varies; in 2026, Feb 17 is Lunar New Year&#x27;s Day)</li><li>Black History Month (United States/Canada)</li><li>World Radio Day • International Mother Language Day</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Use relationship, community, culture, storytelling, and gifting themes where authentic. Lunar New Year content should reflect the actual culture and audience rather than using generic &#x27;Chinese aesthetic&#x27; imagery. Use Valentine&#x27;s content only when it fits the brand.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Winter in the north; summer in the south. Lunar-calendar holidays move each year.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Creator interviews • customer stories • cultural explainers • gift guides • language/heritage content</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">MARCH</div>
+      <h3>Renewal • Spring Energy • Women • Environmental Themes</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>International Women&#x27;s Day (Mar 8)</li><li>International Day of Happiness (Mar 20)</li><li>World Water Day (Mar 22)</li><li>International Day of Forests (Mar 21)</li><li>Nowruz (Mar 21 in 2026; date can vary by calendar/observation)</li><li>Ramadan / Eid season can overlap March in some years</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Lean into renewal, education, community action, sustainability, women-led stories, and culturally relevant seasonal content. For religious observances, plan useful and respectful content rather than forcing a sales angle.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern spring begins around the March equinox; southern autumn begins. Equatorial climates may use local wet/dry seasons.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Spring-clean style content • sustainability tips • founder/customer stories • community initiatives • educational explainers</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">APRIL</div>
+      <h3>Spring • Creativity • Learning • Earth</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>April Fool&#x27;s Day (Apr 1)</li><li>World Health Day (Apr 7)</li><li>World Art Day (Apr 15)</li><li>Earth Day (Apr 22)</li><li>World Book Day / World Book and Copyright Day (Apr 23)</li><li>Easter / Holy Week dates vary by year and tradition</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Use creativity, education, books, arts, sustainability, and spring projects. Humor should be brand-safe and culturally understandable; avoid fake announcements that could cause confusion.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern spring; southern autumn.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Creative challenges • book/learning recommendations • behind-the-scenes • Earth-friendly product/process content</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">MAY</div>
+      <h3>People • Work • Family • Culture • Outdoors</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>International Day of Families (May 15)</li><li>World Press Freedom Day (May 3)</li><li>International Day of Light (May 16)</li><li>World Bee Day (May 20)</li><li>Vesak may occur in May depending on the year/calendar</li><li>Mother&#x27;s Day dates vary by country (many countries observe in May)</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Build people-centered storytelling, employee/creator appreciation, family-friendly content, outdoor themes, and customer/community proof. Mother&#x27;s Day should follow the market&#x27;s local date.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern spring moving toward summer; southern autumn moving toward winter.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Employee stories • family/community content • maker stories • outdoor product use • customer appreciation</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">JUNE</div>
+      <h3>Summer • Pride • Environment • Travel • Mid-Year</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>World Environment Day (Jun 5)</li><li>World Oceans Day (Jun 8)</li><li>International Yoga Day (Jun 21)</li><li>Father&#x27;s Day varies by country (often June)</li><li>Pride Month is observed in many markets</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Use outdoor content, travel, environment, wellbeing, identity/community storytelling, and mid-year progress. For Pride, avoid performative one-off branding; align content with real company behavior and audience relevance.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern summer; southern winter; tropical regions vary by local climate.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Mid-year recap • summer how-to • travel tips • ocean/environment education • inclusive community stories</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">JULY</div>
+      <h3>Adventure • Mid-Year Momentum • Food • Community</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>World Population Day (Jul 11)</li><li>International Friendship Day (Jul 30; date/observance varies)</li><li>Summer holiday season in many northern markets</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Focus on adventure, experiences, travel, community, skills, hobbies, food, and &#x27;halfway through the year&#x27; content. Use localized travel calendars rather than assuming everyone is in summer.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern summer; southern winter.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Bucket lists • tutorials • customer adventures • food content • mid-year challenge</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">AUGUST</div>
+      <h3>Back-to-School • Skills • Youth • Summer-to-Fall Transition</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>International Youth Day (Aug 12)</li><li>International Day for the Remembrance of the Slave Trade and its Abolition (Aug 23)</li><li>Back-to-school season varies by country</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Education, learning, career skills, organization, youth, and seasonal transitions are useful themes. Back-to-school dates can differ dramatically; build regional versions instead of one global post.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern summer moving toward autumn; southern winter moving toward spring.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Study/skill tips • productivity • education products • youth stories • seasonal checklists</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">SEPTEMBER</div>
+      <h3>Back-to-Routine • Education • Peace • Sustainability</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>International Day of Peace (Sep 21)</li><li>International Day of Charity (Sep 5)</li><li>World Tourism Day (Sep 27)</li><li>International Literacy Day (Sep 8)</li><li>World Heart Day (Sep 29)</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Build return-to-routine, education, professional development, community, tourism, and sustainability content. Use September as a strong &#x27;reset systems&#x27; month for B2B and productivity brands.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern autumn begins around the September equinox; southern spring begins.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Back-to-business series • learning content • tourism stories • operational checklists • community impact</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">OCTOBER</div>
+      <h3>Autumn • Creativity • Wellness • Halloween</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>World Mental Health Day (Oct 10)</li><li>World Teachers&#x27; Day (Oct 5)</li><li>World Food Day (Oct 16)</li><li>Halloween (Oct 31; strongest in some markets)</li><li>International Coffee Day (Oct 1 in many campaigns/markets)</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Use seasonal transformation, education, food, creativity, wellness, and Halloween only when culturally relevant. Avoid trivializing sensitive health observances.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern autumn; southern spring.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Before/after stories • seasonal recipes • teacher/community appreciation • educational explainers • themed creative</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">NOVEMBER</div>
+      <h3>Giving • Gratitude • Shopping • Heritage</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>World Children&#x27;s Day (Nov 20)</li><li>International Men&#x27;s Day (Nov 19)</li><li>Diwali may fall in October or November depending on year</li><li>Singles&#x27; Day (Nov 11)</li><li>Black Friday / Cyber Monday dates vary by year</li><li>Thanksgiving is a U.S./Canada-centered observance with different dates</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Balance commercial campaigns with gratitude, giving, customer appreciation, ethical promotions, and community stories. Build country-specific holiday layers rather than treating Thanksgiving or Black Friday as universal.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern autumn moving toward winter; southern spring moving toward summer.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Gift guides • product comparisons • gratitude • customer stories • giving campaigns • deal education</p>
+    </article>
+    
+    <article class="lesson calendar-month">
+      <div class="lesson-num">DECEMBER</div>
+      <h3>Celebration • Reflection • Gifting • Year-End</h3>
+      <h4>🌍 Major planning anchors</h4>
+      <ul><li>Human Rights Day (Dec 10)</li><li>Christmas (Dec 25; widely observed with major regional differences)</li><li>Hanukkah dates vary annually</li><li>Kwanzaa (Dec 26–Jan 1)</li><li>Boxing Day (Dec 26 in some countries)</li><li>New Year&#x27;s Eve (Dec 31)</li></ul>
+      <h4>🧭 Content strategy</h4>
+      <p>Create year-in-review, gratitude, gifting, reflection, charitable giving, traditions, and next-year preparation content. Respect that December is not a single holiday experience for everyone.</p>
+      <h4>🌦️ Season lens</h4>
+      <p>Northern winter; southern summer; tropical climates vary.</p>
+      <h4>💡 Content idea bank</h4>
+      <p>Year-in-review • customer appreciation • gift guides • charitable stories • lessons learned • next-year preview</p>
+    </article>
+    </div>
+</div>
+
+<div class="card">
+<h2>🗺️ Regional Localization Matrix</h2>
+<p>Use this as a starting point, then verify the actual country-level calendar.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Region / Market</th><th>Planning lens</th><th>Examples to research locally</th></tr></thead>
+<tbody>
+<tr><td><strong>North America</strong></td><td>U.S./Canada calendars differ on holidays, sports, school seasons, and retail events.</td><td>Thanksgiving, Black Friday, back-to-school, local state/province events.</td></tr>
+<tr><td><strong>Latin America</strong></td><td>National, cultural, Catholic, family, football, and local festival calendars are influential.</td><td>Country national days, Carnaval calendars, Mother's/Father's Day dates, local festivals.</td></tr>
+<tr><td><strong>Europe</strong></td><td>Country-level public holidays, school calendars, cultural/religious observances, and multilingual audiences matter.</td><td>Local bank/public holidays, school starts, national days, regional festivals.</td></tr>
+<tr><td><strong>Middle East & North Africa</strong></td><td>Lunar religious calendars are especially important and exact dates may depend on observation or local authority.</td><td>Ramadan, Eid al-Fitr, Eid al-Adha, national days, local cultural seasons.</td></tr>
+<tr><td><strong>South Asia</strong></td><td>Multiple religious and regional calendars overlap; dates vary by lunar or regional calendars.</td><td>Diwali, Holi, Vesak, Eid observances, national days, regional festivals.</td></tr>
+<tr><td><strong>East Asia</strong></td><td>Lunar-calendar holidays and local cultural conventions strongly affect timing and creative context.</td><td>Lunar New Year, Golden Week in relevant markets, Mid-Autumn Festival, regional holidays.</td></tr>
+<tr><td><strong>Southeast Asia</strong></td><td>National, religious, lunar, school, shopping, and tropical-season calendars overlap.</td><td>Lunar New Year, Ramadan/Eid in Muslim-majority markets, Songkran, national days, local school seasons.</td></tr>
+<tr><td><strong>Africa</strong></td><td>Country-level public holidays, religious calendars, school calendars, and regional culture matter.</td><td>National days, Eid, Christmas/Easter traditions where observed, local cultural festivals.</td></tr>
+<tr><td><strong>Oceania</strong></td><td>Southern Hemisphere seasons matter; Australia/New Zealand calendars differ from northern markets.</td><td>Summer/Christmas season, ANZ school calendars, national days, local sport/events.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div class="card">
+
+<h2>🗓️ Build a 12-Month Global Social Calendar</h2>
+<p><strong>Step 1:</strong> Start with permanent brand campaigns and launches.</p>
+<p><strong>Step 2:</strong> Add platform seasons and audience behavior.</p>
+<p><strong>Step 3:</strong> Add relevant global observances from authoritative sources.</p>
+<p><strong>Step 4:</strong> Add country-specific national/public holidays.</p>
+<p><strong>Step 5:</strong> Add cultural/religious observances only for markets and audiences where they are relevant.</p>
+<p><strong>Step 6:</strong> Add commercial moments such as shopping events, sales periods, or industry events.</p>
+<p><strong>Step 7:</strong> Assign a content angle, platform, owner, asset type, CTA, approval gate, and measurement.</p>
+<p><strong>Step 8:</strong> Verify dates every year—especially lunar, religious, school, sports, election, and local event dates.</p>
+<p><strong>Step 9:</strong> Produce at least one evergreen content stream each month so your calendar is not 100% holiday-driven.</p>
+<p><strong>Step 10:</strong> Review performance after each major campaign and store the learning for next year.</p>
+
+</div>
+
+<div class="card">
+<h2>🎨 Holiday Content Formula</h2>
+<div class="stats">
+<div class="stat"><b>Educate</b>Explain the observance or seasonal context.</div>
+<div class="stat"><b>Celebrate</b>Share relevant stories, traditions, people, or community.</div>
+<div class="stat"><b>Participate</b>Offer a useful activity, guide, prompt, event, or resource.</div>
+<div class="stat"><b>Convert</b>Only add a sale/CTA when the commercial connection is authentic.</div>
+<div class="stat"><b>Listen</b>Ask the audience how they observe or experience the moment.</div>
+<div class="stat"><b>Reflect</b>Turn the moment into an evergreen lesson or brand value.</div>
+</div>
+</div>
+
+<div class="card">
+<h2>⚠️ Holiday Content Risk Checklist</h2>
+<p>Before posting: verify date • verify country • verify cultural context • check pronunciation/spelling • check imagery • check religious sensitivity • confirm claims • confirm commercial disclosure • confirm local language • avoid stereotypes • avoid using tragedy/awareness days as gimmicks • confirm the post fits the brand.</p>
+</div>
+
+<div class="card">
+
+<h2>📚 Global Calendar Sources</h2>
+<ul>
+<li><a href="https://www.un.org/en/observances/list-days-weeks" target="_blank" rel="noopener">United Nations — International Days and Weeks</a></li>
+<li><a href="https://www.timeanddate.com/holidays/world/" target="_blank" rel="noopener">Timeanddate — Worldwide Holidays</a></li>
+<li><a href="https://www.timeanddate.com/holidays/" target="_blank" rel="noopener">Timeanddate — Holidays by Country</a></li>
+<li><a href="https://www.un.org/en/calendar-by-property/month/110558/2026" target="_blank" rel="noopener">United Nations — 2026 observance calendar</a></li>
+</ul>
+<div class="callout"><strong>Date note:</strong> Holiday dates and observance practices can differ by country, religion, calendar system, local authority, and year. Some Islamic holidays begin at sunset and may depend on lunar observation; some national holidays move to substitute weekdays. Always verify the local market's official calendar before publishing.</div>
+
+</div>
+</section>
+
+<section id="quiz" class="tab hidden"><div class="card"><h2>Knowledge Checks</h2>
+<div class="quiz">
+<div class="q"><strong>1. What is the safest way to handle a platform policy claim that you remember from last year?</strong>
+<label><input type="radio" name="q1" value="a"> Use your memory.</label>
+<label><input type="radio" name="q1" value="b"> Read the current official policy and account notice.</label>
+<label><input type="radio" name="q1" value="c"> Ask a random creator.</label></div>
+<div class="q"><strong>2. Which is a better definition of retention?</strong>
+<label><input type="radio" name="q2" value="a"> Gaining new customers only.</label>
+<label><input type="radio" name="q2" value="b"> Keeping a defined group over time.</label>
+<label><input type="radio" name="q2" value="c"> Increasing impressions.</label></div>
+<div class="q"><strong>3. What should happen before an automated system publishes high-impact content?</strong>
+<label><input type="radio" name="q3" value="a"> Nothing.</label>
+<label><input type="radio" name="q3" value="b"> Appropriate human QA/approval based on risk.</label>
+<label><input type="radio" name="q3" value="c"> Delete the approval workflow.</label></div>
+<div class="q"><strong>4. Which is NOT automatically proof that a campaign succeeded?</strong>
+<label><input type="radio" name="q4" value="a"> Views alone.</label>
+<label><input type="radio" name="q4" value="b"> A business metric tied to the objective.</label>
+<label><input type="radio" name="q4" value="c"> Qualified conversions when that is the goal.</label></div>
+<div class="q"><strong>5. What is a platform-native asset?</strong>
+<label><input type="radio" name="q5" value="a"> The identical file reposted everywhere.</label>
+<label><input type="radio" name="q5" value="b"> Content adapted to the platform's audience, format, and culture.</label>
+<label><input type="radio" name="q5" value="c"> Only content made without a phone.</label></div>
+<button class="primary" onclick="gradeQuiz()">Grade Quiz</button>
+<div id="quizResult" class="callout hidden"></div>
+</div>
+</div></section>
+
+<div class="card">
+<h2>🎮 Challenge Mode</h2>
+<p>Use these mini-sprints when you are bored with reading.</p>
+<div class="stats">
+  <div class="stat"><b>⚡ 10 min</b>Find 10 content hooks</div>
+  <div class="stat"><b>🕵️ 15 min</b>Audit one profile</div>
+  <div class="stat"><b>📊 20 min</b>Explain 5 metrics</div>
+  <div class="stat"><b>🤖 25 min</b>Design one automation</div>
+  <div class="stat"><b>🔎 20 min</b>Find 5 search intents</div>
+  <div class="stat"><b>💰 20 min</b>Build one monetization idea</div>
+</div>
+</div>
+
+<section id="portfolio" class="tab hidden"><div class="card"><h2>Professional Portfolio</h2><p>Your portfolio should show the ability to run a real social operation.</p><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p0"> Social Media Manager role map + operating principles</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p1"> Audience personas + social listening board</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p2"> Competitor and trend analysis report</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p3"> 30-day cross-platform content strategy</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p4"> Meta Business asset/permissions map</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p5"> Facebook 7-day content + community report</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p6"> Instagram profile audit + Reel/Story system</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p7"> TikTok series plan + policy checklist</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p8"> YouTube channel map + long-form/Shorts strategy</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p9"> Multi-platform culture matrix</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p10"> Content brief pack + 30-point QA checklist</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p11"> Community response taxonomy + crisis playbook</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p12"> Weekly analytics dashboard + monthly executive report</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p13"> UTM naming and conversion-tracking system</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p14"> Five social experiments with hypotheses</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p15"> Monetization ladder + revenue model</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p16"> Platform monetization readiness matrix</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p17"> Policy watchlist with official URLs and last-checked dates</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p18"> Creator partnership brief + vetting scorecard</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p19"> Affiliate/product monetization plan</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p20"> Notion Social Media Command Center</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p21"> Five automation workflow diagrams with exception handling</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p22"> AI prompt library + human QA checklist</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p23"> Paid social campaign brief</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p24"> 30-day content engine with repurposing map</label><label class="portfolio-item"><input type="checkbox" class="progress-check" data-key="p25"> 90-day Social Media Operating Manual</label></div></section>
+</main>
+<footer>Social Media Manager Mastery Academy • Research • Create • Protect • Measure • Monetize • Improve</footer>
+<script>
+const tabs=document.querySelectorAll(".tab"),nav=document.querySelectorAll(".nav button");
+nav.forEach(b=>b.addEventListener("click",()=>{nav.forEach(x=>x.classList.remove("active"));b.classList.add("active");tabs.forEach(t=>t.classList.add("hidden"));document.getElementById(b.dataset.tab).classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"})}));
+document.getElementById("weekJump").addEventListener("change",e=>{const v=e.target.value;if(!v)return;document.querySelector('[data-tab="course"]').click();setTimeout(()=>document.getElementById(v)?.scrollIntoView({behavior:"smooth",block:"start"}),50)});
+const checks=[...document.querySelectorAll(".progress-check")];
+function updateProgress(){const d=checks.filter(c=>c.checked).length,t=checks.length,p=t?Math.round(d/t*100):0;document.getElementById("doneCount").textContent=p+"%";document.getElementById("progressBar").style.width=p+"%";const xp=d*100;const xpEl=document.getElementById("xpValue");if(xpEl)xpEl.textContent=xp+" XP";}
+checks.forEach(c=>{c.checked=localStorage.getItem("smmAcademy:"+c.dataset.key)==="1";c.addEventListener("change",()=>{localStorage.setItem("smmAcademy:"+c.dataset.key,c.checked?"1":"0");updateProgress()})});
+document.getElementById("glossarySearch").addEventListener("input",e=>{const q=e.target.value.toLowerCase().trim();let n=0;document.querySelectorAll("#glossaryTable tbody tr").forEach(r=>{const ok=r.innerText.toLowerCase().includes(q);r.style.display=ok?"":"none";if(ok)n++});document.getElementById("glossaryCount").textContent=n+" terms shown"});
+document.getElementById("globalSearch").addEventListener("input",e=>{const q=e.target.value.toLowerCase().trim();if(q.length<2)return;const lessons=[...document.querySelectorAll(".lesson")],m=lessons.find(x=>x.innerText.toLowerCase().includes(q));if(m){document.querySelector('[data-tab="course"]').click();setTimeout(()=>m.scrollIntoView({behavior:"smooth",block:"center"}),50)}else{document.querySelector('[data-tab="glossary"]').click();setTimeout(()=>{document.getElementById("glossarySearch").value=q;document.getElementById("glossarySearch").dispatchEvent(new Event("input"))},50)}});
+function gradeQuiz(){const k={q1:"b",q2:"b",q3:"b",q4:"a",q5:"b"},s=Object.keys(k).reduce((n,q)=>n+(document.querySelector('input[name="'+q+'"]:checked')?.value===k[q]?1:0),0),r=document.getElementById("quizResult");r.classList.remove("hidden");r.innerHTML="<strong>Score: "+s+"/5</strong><br>"+(s===5?"Excellent. You understand the core operating principles.":"Review the related lessons and retake the quiz.")}
+updateProgress();
+</script>
+</body></html>
